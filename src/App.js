@@ -1,11 +1,15 @@
-import React, { Component } from "react";
-import "./App.css";
-import styled from "styled-components";
-import "./style/grid.css";
-import "./style/font.css";
-import "normalize.css";
-import shape from "./assets/shape.svg";
-import search from "./assets/search.svg";
+import React, {Component} from 'react';
+import './App.css';
+import styled from 'styled-components';
+import './style/grid.css';
+import './style/font.css';
+import 'normalize.css';
+import shape from './assets/svg/shape.svg';
+import search from './assets/svg/search.svg';
+import home from './assets/png/home.png';
+import experiences from './assets/png/experiences.png';
+import restaurants from './assets/png/restaurants.png';
+import forest from './assets/png/forest.png';
 
 const Header = styled.header`
   background: #ffffff;
@@ -68,8 +72,9 @@ const Btn = styled.span`
 `;
 
 const Section = styled.section`
-  margin-top: 48px;
+  margin: 24px 0;
   display: flex;
+  flex-direction: column;
 `;
 
 const H2 = styled.h2`
@@ -77,15 +82,69 @@ const H2 = styled.h2`
   line-height: 34px;
   font-size: 32px;
   color: #383838;
+  margin: 24px 0;
 `;
 
 const ExploreBlock = styled.div`
   background: #ffffff;
+  font-family: CircularAir;
   border: 1px solid rgba(72, 72, 72, 0.2);
   box-sizing: border-box;
   box-shadow: 0px 2px 4px rgba(72, 72, 72, 0.08);
   border-radius: 4px;
+  margin-right: 9px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  &:last-child {
+    margin-right: 0;
+  }
 `;
+
+const SubHeader = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
+const ExploreImg = styled.img`
+  width: 96px;
+  height: 72px;
+  align-items: center;
+`;
+
+const ExploreTitle = styled.span`margin-left: 24px;`;
+
+const Slider1 = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
+const ExpBlock = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  margin-right: 17px;
+  &:last-child {
+    margin-right: 0;
+  }
+`;
+
+const ExpImg = styled.img`width: 100%;`;
+
+const ExpImgDesc = styled.p`
+  font-family: CircularAirBold;
+  margin: 0;
+  padding: 0;
+`;
+
+const ExpPrice = styled.span`font-family: CircularAirBold;`;
+
+const ExpTitle = styled.span`font-family: CircularAirLight;`;
+
+const ExpStars = styled.span`color: #008489;`;
+
+const ExpReviews = styled.span`font-family: CircularAir;`;
 
 class App extends Component {
   render() {
@@ -93,7 +152,7 @@ class App extends Component {
       <div className="container">
         <Header className="row">
           <Logo className="col-1">
-            <img src={shape} />
+            <img alt="logo" src={shape} />
           </Logo>
           <Search className="col-5">
             <SearchLogo src={search} />
@@ -109,9 +168,57 @@ class App extends Component {
         </Header>
         <Section>
           <H2>Explore Airbnb</H2>
-          <ExploreBlock className="col-4">Exasdf</ExploreBlock>
-          <ExploreBlock className="col-4">Exasdf</ExploreBlock>
-          <ExploreBlock className="col-4">Exasdf</ExploreBlock>
+          <SubHeader>
+            <ExploreBlock className="col-4">
+              <ExploreImg src={home} />
+              <ExploreTitle>Home</ExploreTitle>
+            </ExploreBlock>
+            <ExploreBlock className="col-4">
+              <ExploreImg src={experiences} />
+              <ExploreTitle>Experiences</ExploreTitle>
+            </ExploreBlock>
+            <ExploreBlock className="col-4">
+              <ExploreImg src={restaurants} />
+              <ExploreTitle>Restaurants</ExploreTitle>
+            </ExploreBlock>
+          </SubHeader>
+        </Section>
+        <Section>
+          <H2>Explore Airbnb</H2>
+          <Slider1>
+            <ExpBlock className="col-3">
+              <ExpImg src={forest} />
+              <ExpImgDesc>
+                <ExpPrice>$29</ExpPrice>
+                <ExpTitle>Forest</ExpTitle>
+              </ExpImgDesc>
+              <ExpImgDesc>
+                <ExpStars>⭐⭐⭐⭐⭐</ExpStars>
+                <ExpReviews>45 reviews</ExpReviews>
+              </ExpImgDesc>
+            </ExpBlock>
+            <ExpBlock className="col-3">
+              <ExpImg src={forest} />
+              <ExpPrice>$29</ExpPrice>
+              <ExpTitle>Forest</ExpTitle>
+              <ExpStars>*****</ExpStars>
+              <ExpReviews>45 reviews</ExpReviews>
+            </ExpBlock>
+            <ExpBlock className="col-3">
+              <ExpImg src={forest} />
+              <ExpPrice>$29</ExpPrice>
+              <ExpTitle>Forest</ExpTitle>
+              <ExpStars>*****</ExpStars>
+              <ExpReviews>45 reviews</ExpReviews>
+            </ExpBlock>
+            <ExpBlock className="col-3">
+              <ExpImg src={forest} />
+              <ExpPrice>$29</ExpPrice>
+              <ExpTitle>Forest</ExpTitle>
+              <ExpStars>*****</ExpStars>
+              <ExpReviews>45 reviews</ExpReviews>
+            </ExpBlock>
+          </Slider1>
         </Section>
       </div>
     );
