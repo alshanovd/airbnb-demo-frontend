@@ -1,15 +1,21 @@
-import React, {Component} from 'react';
-import './App.css';
-import styled from 'styled-components';
-import './style/grid.css';
-import './style/font.css';
-import 'normalize.css';
-import shape from './assets/svg/shape.svg';
-import search from './assets/svg/search.svg';
-import home from './assets/png/home.png';
-import experiences from './assets/png/experiences.png';
-import restaurants from './assets/png/restaurants.png';
-import forest from './assets/png/forest.png';
+import React, { Component } from "react";
+import "./App.css";
+import styled from "styled-components";
+import "./style/grid.css";
+import "./style/font.css";
+import "normalize.css";
+import shape from "./assets/svg/shape.svg";
+import search from "./assets/svg/search.svg";
+import home from "./assets/png/home.png";
+import experiences from "./assets/png/experiences.png";
+import restaurants from "./assets/png/restaurants.png";
+import forest from "./assets/png/forest.png";
+import star from "./assets/png/star.png";
+import salsa from "./assets/png/salsa.png";
+import mountian from "./assets/png/mountian.png";
+import whale from "./assets/png/whale.png";
+import arrow from "./assets/png/arrow.png";
+import seeall from "./assets/svg/seeall.svg";
 
 const Header = styled.header`
   background: #ffffff;
@@ -75,14 +81,18 @@ const Section = styled.section`
   margin: 24px 0;
   display: flex;
   flex-direction: column;
+  position: relative;
 `;
 
 const H2 = styled.h2`
+  display: flex;
+  align-items: center;
   font-family: CircularAirBold;
   line-height: 34px;
   font-size: 32px;
   color: #383838;
   margin: 24px 0;
+  justify-content: space-between;
 `;
 
 const ExploreBlock = styled.div`
@@ -134,17 +144,63 @@ const ExpImg = styled.img`width: 100%;`;
 
 const ExpImgDesc = styled.p`
   font-family: CircularAirBold;
-  margin: 0;
+  margin: 8px 0 0;
   padding: 0;
+  color: #383838;
 `;
 
-const ExpPrice = styled.span`font-family: CircularAirBold;`;
+const Star = styled.img`
+  margin-right: 5px;
+  height: 12px;
+`;
 
-const ExpTitle = styled.span`font-family: CircularAirLight;`;
+const ExpPrice = styled.span`
+  font-family: CircularAirBold;
+  padding-right: 3px;
+`;
 
-const ExpStars = styled.span`color: #008489;`;
+const ExpTitle = styled.span`font-family: CircularAirLight;font-size: 15px
+line-height: 18px`;
 
-const ExpReviews = styled.span`font-family: CircularAir;`;
+const ExpStars = styled.div`
+  display: flex;
+  align-items: center;
+  color: #383838;
+  margin-top: 3px;
+`;
+
+const ExpReviews = styled.span`
+  font-family: CircularAir;
+  line-height: normal;
+  font-size: 12px;
+`;
+
+const NextPage = styled.div`
+  background: #ffffff;
+  background-image: url(${arrow});
+  background-position: center center;
+  border: 0.5px solid rgba(72, 72, 72, 0.2);
+  box-sizing: border-box;
+  box-shadow: 0px 2px 4px rgba(72, 72, 72, 0.16);
+  border-radius: 20px;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  right: -15px;
+`;
+
+const SeeAll = styled.span`
+  font-family: CircularAirLight;
+  line-height: 24px;
+  font-size: 14px;
+  text-align: right;
+  &:after {
+    padding: 8px;
+    content: url(${seeall});
+  }
+`;
 
 class App extends Component {
   render() {
@@ -184,39 +240,71 @@ class App extends Component {
           </SubHeader>
         </Section>
         <Section>
-          <H2>Explore Airbnb</H2>
+          <H2>
+            Explore Airbnb
+            <SeeAll>See all</SeeAll>
+          </H2>
           <Slider1>
+            <NextPage />
             <ExpBlock className="col-3">
               <ExpImg src={forest} />
               <ExpImgDesc>
                 <ExpPrice>$29</ExpPrice>
-                <ExpTitle>Forest</ExpTitle>
+                <ExpTitle>Forest therapy</ExpTitle>
+                <ExpStars>
+                  <Star src={star} />
+                  <Star src={star} />
+                  <Star src={star} />
+                  <Star src={star} />
+                  <Star src={star} />
+                  <ExpReviews>47 reviews</ExpReviews>
+                </ExpStars>
               </ExpImgDesc>
+            </ExpBlock>
+            <ExpBlock className="col-3">
+              <ExpImg src={whale} />
               <ExpImgDesc>
-                <ExpStars>⭐⭐⭐⭐⭐</ExpStars>
-                <ExpReviews>45 reviews</ExpReviews>
+                <ExpPrice>$69</ExpPrice>
+                <ExpTitle>Whale watching</ExpTitle>
+                <ExpStars>
+                  <Star src={star} />
+                  <Star src={star} />
+                  <Star src={star} />
+                  <Star src={star} />
+                  <Star src={star} />
+                  <ExpReviews>45 reviews</ExpReviews>
+                </ExpStars>
               </ExpImgDesc>
             </ExpBlock>
             <ExpBlock className="col-3">
-              <ExpImg src={forest} />
-              <ExpPrice>$29</ExpPrice>
-              <ExpTitle>Forest</ExpTitle>
-              <ExpStars>*****</ExpStars>
-              <ExpReviews>45 reviews</ExpReviews>
+              <ExpImg src={mountian} />
+              <ExpImgDesc>
+                <ExpPrice>$69</ExpPrice>
+                <ExpTitle>Table Mountain Summit, Cable Car Down</ExpTitle>
+                <ExpStars>
+                  <Star src={star} />
+                  <Star src={star} />
+                  <Star src={star} />
+                  <Star src={star} />
+                  <Star src={star} />
+                  <ExpReviews>44 reviews</ExpReviews>
+                </ExpStars>
+              </ExpImgDesc>
             </ExpBlock>
             <ExpBlock className="col-3">
-              <ExpImg src={forest} />
-              <ExpPrice>$29</ExpPrice>
-              <ExpTitle>Forest</ExpTitle>
-              <ExpStars>*****</ExpStars>
-              <ExpReviews>45 reviews</ExpReviews>
-            </ExpBlock>
-            <ExpBlock className="col-3">
-              <ExpImg src={forest} />
-              <ExpPrice>$29</ExpPrice>
-              <ExpTitle>Forest</ExpTitle>
-              <ExpStars>*****</ExpStars>
-              <ExpReviews>45 reviews</ExpReviews>
+              <ExpImg src={salsa} />
+              <ExpImgDesc>
+                <ExpPrice>$50</ExpPrice>
+                <ExpTitle>Salsa Night</ExpTitle>
+                <ExpStars>
+                  <Star src={star} />
+                  <Star src={star} />
+                  <Star src={star} />
+                  <Star src={star} />
+                  <Star src={star} />
+                  <ExpReviews>49 reviews</ExpReviews>
+                </ExpStars>
+              </ExpImgDesc>
             </ExpBlock>
           </Slider1>
         </Section>
