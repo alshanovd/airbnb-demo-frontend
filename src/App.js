@@ -1,11 +1,9 @@
 import React, { Component } from "react";
 import "./App.css";
 import styled from "styled-components";
-import "./style/grid.css";
+// import "./style/grid.css";
 import "./style/font.css";
 import "normalize.css";
-import shape from "./assets/svg/shape.svg";
-import search from "./assets/svg/search.svg";
 import home from "./assets/png/home.png";
 import experiences from "./assets/png/experiences.png";
 import restaurants from "./assets/png/restaurants.png";
@@ -34,67 +32,9 @@ import footerlogo from "./assets/svg/footer-logo.svg";
 import facebook from "./assets/svg/facebook.svg";
 import twitter from "./assets/svg/twitter.svg";
 import instagram from "./assets/svg/instagram.svg";
+import { Grid, Row, Col } from "react-flexbox-grid";
 
-const Header = styled.header`
-  background: #ffffff;
-  box-shadow: 0px 0.5px 0px rgba(72, 72, 72, 0.3);
-  display: flex;
-  height: 80px;
-  align-items: center;
-`;
-
-const Search = styled.div`
-  width: 392px;
-  height: 48px;
-  left: 162px;
-  top: 16px;
-  background: #ffffff;
-  border: 1px solid rgba(72, 72, 72, 0.2);
-  box-shadow: 0px 2px 4px rgba(72, 72, 72, 0.08);
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-`;
-
-const Logo = styled.div`
-  width: 30px;
-  height: 32px;
-  left: 81px;
-  top: 24px;
-`;
-
-const SearchLogo = styled.img`margin-left: 5px;`;
-
-const TryMiami = styled.input`
-  width: 148px;
-  height: 24px;
-  left: 215px;
-  top: 28px;
-  font-family: CircularAir;
-  line-height: 24px;
-  font-size: 16px;
-  color: #383838;
-  mix-blend-mode: normal;
-  opacity: 0.64;
-  width: 100%;
-  border: none;
-  margin: 0 10px;
-`;
-
-const Bnts = styled.div`
-  left: 743px;
-  top: 27px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  color: #383838;
-`;
-
-const Btn = styled.span`
-  font-family: CircularAir;
-  line-height: 24px;
-  font-size: 14px;
-`;
+import Header from "./Header";
 
 const Section = styled.section`
   margin: 24px 0;
@@ -370,23 +310,8 @@ const Social = styled.img`padding: 3px;`;
 class App extends Component {
   render() {
     return (
-      <div className="container">
-        <Header className="row">
-          <Logo className="col-1">
-            <img alt="logo" src={shape} />
-          </Logo>
-          <Search className="col-5">
-            <SearchLogo src={search} />
-            <TryMiami placeholder="Try Miami!" />
-          </Search>
-          <div className="col-2" />
-          <Bnts className="col-4">
-            <Btn>Become a host</Btn>
-            <Btn>Help</Btn>
-            <Btn>Sing Up</Btn>
-            <Btn>Log In</Btn>
-          </Bnts>
-        </Header>
+      <Grid fluid>
+        <Header />
         <Section>
           <H2>Explore Airbnb</H2>
           <SubHeader>
@@ -652,7 +577,7 @@ class App extends Component {
             <Social src={instagram} />
           </FooterLinks>
         </Footer>
-      </div>
+      </Grid>
     );
   }
 }
