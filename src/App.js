@@ -1,39 +1,39 @@
-import React, {Component} from 'react';
-import './App.css';
-import styled from 'styled-components';
-import './style/grid.css';
-import './style/font.css';
-import 'normalize.css';
-import shape from './assets/svg/shape.svg';
-import search from './assets/svg/search.svg';
-import home from './assets/png/home.png';
-import experiences from './assets/png/experiences.png';
-import restaurants from './assets/png/restaurants.png';
-import forest from './assets/png/forest.png';
-import star from './assets/png/star.png';
-import salsa from './assets/png/salsa.png';
-import mountian from './assets/png/mountian.png';
-import whale from './assets/png/whale.png';
-import arrow from './assets/png/arrow.png';
-import seeall from './assets/svg/seeall.svg';
-import lasalentina from './assets/png/lasalentina.png';
-import dreamy from './assets/png/dreamy.png';
-import bedr3 from './assets/png/bedr3.png';
-import chum from './assets/png/chum.png';
-import hanjan from './assets/png/hanjan.png';
-import primemeats from './assets/png/primemeats.png';
-import seaprice from './assets/png/seaprice.png';
-import paris from './assets/png/paris.png';
-import losangeles from './assets/png/losangeles.png';
-import seoul from './assets/png/seoul.png';
-import capetown from './assets/png/capetown.png';
-import tokyo from './assets/png/tokyo.png';
-import miami from './assets/png/miami.png';
-import dropdown from './assets/svg/dropdown.svg';
-import footerlogo from './assets/svg/footer-logo.svg';
-import facebook from './assets/svg/facebook.svg';
-import twitter from './assets/svg/twitter.svg';
-import instagram from './assets/svg/instagram.svg';
+import React, { Component } from "react";
+import "./App.css";
+import styled from "styled-components";
+import "./style/grid.css";
+import "./style/font.css";
+import "normalize.css";
+import shape from "./assets/svg/shape.svg";
+import search from "./assets/svg/search.svg";
+import home from "./assets/png/home.png";
+import experiences from "./assets/png/experiences.png";
+import restaurants from "./assets/png/restaurants.png";
+import forest from "./assets/png/forest.png";
+import star from "./assets/png/star.png";
+import salsa from "./assets/png/salsa.png";
+import mountian from "./assets/png/mountian.png";
+import whale from "./assets/png/whale.png";
+import arrow from "./assets/png/arrow.png";
+import seeall from "./assets/svg/seeall.svg";
+import lasalentina from "./assets/png/lasalentina.png";
+import dreamy from "./assets/png/dreamy.png";
+import bedr3 from "./assets/png/bedr3.png";
+import chum from "./assets/png/chum.png";
+import hanjan from "./assets/png/hanjan.png";
+import primemeats from "./assets/png/primemeats.png";
+import seaprice from "./assets/png/seaprice.png";
+import paris from "./assets/png/paris.png";
+import losangeles from "./assets/png/losangeles.png";
+import seoul from "./assets/png/seoul.png";
+import capetown from "./assets/png/capetown.png";
+import tokyo from "./assets/png/tokyo.png";
+import miami from "./assets/png/miami.png";
+import dropdown from "./assets/svg/dropdown.svg";
+import footerlogo from "./assets/svg/footer-logo.svg";
+import facebook from "./assets/svg/facebook.svg";
+import twitter from "./assets/svg/twitter.svg";
+import instagram from "./assets/svg/instagram.svg";
 
 const Header = styled.header`
   background: #ffffff;
@@ -138,7 +138,10 @@ const ExploreImg = styled.img`
   align-items: center;
 `;
 
-const ExploreTitle = styled.span`margin-left: 24px; color: #383838`;
+const ExploreTitle = styled.span`
+  margin-left: 24px;
+  color: #383838;
+`;
 
 const Slider = styled.div`display: flex;`;
 
@@ -321,7 +324,7 @@ const BottomTitle = styled.h3`
   line-height: normal;
   font-size: 15px;
   color: #383838;
-  margin-bottom: 12px;
+  margin: 0 0 16px 0;
 `;
 
 const BottomLink = styled.p`
@@ -329,7 +332,7 @@ const BottomLink = styled.p`
   line-height: normal;
   font-size: 15px;
   color: #636363;
-  margin: 4px 0;
+  margin: 0 0 8px 0;
 `;
 
 const Footer = styled.footer`
@@ -596,25 +599,42 @@ class App extends Component {
           <Selects className="col-3">
             <Select>
               <option>English</option>
+              <option>Russian</option>
+              <option>Deutsch</option>
             </Select>
             <Select>
-              <option>English</option>
+              <option>United Sates dollar</option>
+              <option>Canadian dollar</option>
             </Select>
           </Selects>
           <div className="col-1" />
           <BottomLinks className="col-2">
             <BottomTitle>Airbnb</BottomTitle>
             <BottomLink>About us</BottomLink>
+            <BottomLink>Careers</BottomLink>
+            <BottomLink>Press</BottomLink>
+            <BottomLink>Policies</BottomLink>
+            <BottomLink>Help</BottomLink>
+            <BottomLink>Diversity & Belongin</BottomLink>
           </BottomLinks>
           <div className="col-1" />
           <BottomLinks className="col-2">
-            <BottomTitle>Airbnb</BottomTitle>
-            <BottomLink>About us</BottomLink>
+            <BottomTitle>Discover</BottomTitle>
+            <BottomLink>Trust & Safety</BottomLink>
+            <BottomLink>Travel Credit</BottomLink>
+            <BottomLink>Gift Cards</BottomLink>
+            <BottomLink>Airbnb Citizen</BottomLink>
+            <BottomLink>Business Travel</BottomLink>
+            <BottomLink>Guidebooks</BottomLink>
+            <BottomLink>Airbnbmag</BottomLink>
           </BottomLinks>
           <div className="col-1" />
           <BottomLinks className="col-2">
-            <BottomTitle>Airbnb</BottomTitle>
-            <BottomLink>About us</BottomLink>
+            <BottomTitle>Hosting</BottomTitle>
+            <BottomLink>Why Host</BottomLink>
+            <BottomLink>Hospitality</BottomLink>
+            <BottomLink>Responsible Hosting</BottomLink>
+            <BottomLink>Community Center</BottomLink>
           </BottomLinks>
         </Bottom>
         <Footer>
@@ -625,8 +645,8 @@ class App extends Component {
           <div className="col-6" />
           <FooterLinks className="col-4">
             <a href="#">Terms</a>
-            <a href="#">Terms</a>
-            <a href="#">Terms</a>
+            <a href="#">Privacy</a>
+            <a href="#">Site map</a>
             <Social src={facebook} />
             <Social src={twitter} />
             <Social src={instagram} />
