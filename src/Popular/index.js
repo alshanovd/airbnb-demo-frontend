@@ -10,7 +10,9 @@ import {
   ParBold,
   Img,
   SectionHead,
+  NoWrap,
 } from './../Exports';
+import './../Exports/style.css';
 import chum from './chum.png';
 import hanjan from './hanjan.png';
 import primemeats from './primemeats.png';
@@ -39,31 +41,35 @@ export default () => (
       <SeeAll>See all</SeeAll>
     </SectionHead>
     <Row>
-      <NextPage />
-      <Col lg={3}>
-        <Img src={chum} />
-        <Descr>Speakeasy</Descr>
-        <Title>Chumley's</Title>
-        <SubTitle>About $60 per person</SubTitle>
-      </Col>
-      <Col lg={3}>
-        <Img src={hanjan} />
-        <Descr>Korean gastropub</Descr>
-        <Title>Hanjan</Title>
-        <SubTitle>About $50 per person</SubTitle>
-      </Col>
-      <Col lg={3}>
-        <Img src={primemeats} />
-        <Descr>German american</Descr>
-        <Title>Prime Meats</Title>
-        <SubTitle>About $55 per person</SubTitle>
-      </Col>
-      <Col lg={3}>
-        <Img src={seaprice} />
-        <Descr>Fine seafood</Descr>
-        <Title>Seaprice</Title>
-        <SubTitle>About $70 per person</SubTitle>
-      </Col>
+      <NoWrap>
+        <div className="md-hide">
+          <NextPage />
+        </div>
+        <Col lg={3} md={4}>
+          <Img src={chum} />
+          <Descr>Speakeasy</Descr>
+          <Title>Chumley's</Title>
+          <SubTitle>About $60 per person</SubTitle>
+        </Col>
+        <Col lg={3} md={4}>
+          <Img src={hanjan} />
+          <Descr>Korean gastropub</Descr>
+          <Title>Hanjan</Title>
+          <SubTitle>About $50 per person</SubTitle>
+        </Col>
+        <Col lg={3} md={4}>
+          <Img src={primemeats} />
+          <Descr>German american</Descr>
+          <Title>Prime Meats</Title>
+          <SubTitle>About $55 per person</SubTitle>
+        </Col>
+        <Col lg={3} md={4}>
+          <Img src={seaprice} />
+          <Descr>Fine seafood</Descr>
+          <Title>Seaprice</Title>
+          <SubTitle>About $70 per person</SubTitle>
+        </Col>
+      </NoWrap>
     </Row>
   </Section>
 );

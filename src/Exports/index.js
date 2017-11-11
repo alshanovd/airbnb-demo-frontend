@@ -115,3 +115,10 @@ export const SectionHead = styled.div`
   justify-content: space-between;
   align-items: center;
 `;
+
+export const NoWrap = styled.div`
+  flex-wrap: nowrap;
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+`;

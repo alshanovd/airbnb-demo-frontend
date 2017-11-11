@@ -15,7 +15,7 @@ const Header = styled.header`
 export default () => (
   <Row>
     <Header>
-      <Col lg={1}>
+      <Col lg={1} md={1}>
         <img alt="logo" src={shape} />
       </Col>
       <Search />

@@ -1,5 +1,5 @@
 import React from 'react';
-import {H2, Section, SpanBold} from './../Exports';
+import {H2, Section, SpanBold, NoWrap} from './../Exports';
 import styled from 'styled-components';
 import {Row, Col} from 'react-flexbox-grid';
 import home from './home.png';
@@ -31,24 +31,26 @@ export default () => (
   <Section>
     <H2>Explore Airbnb</H2>
     <Row>
-      <Col lg={4}>
-        <Block>
-          <Img src={home} />
-          <Title>Home</Title>
-        </Block>
-      </Col>
-      <Col lg={4}>
-        <Block>
-          <Img src={experiences} />
-          <Title>Experiences</Title>
-        </Block>
-      </Col>
-      <Col lg={4}>
-        <Block>
-          <Img src={restaurants} />
-          <Title>Restaurants</Title>
-        </Block>
-      </Col>
+      <NoWrap>
+        <Col lg={4} md={5}>
+          <Block>
+            <Img src={home} />
+            <Title>Home</Title>
+          </Block>
+        </Col>
+        <Col lg={4} md={5}>
+          <Block>
+            <Img src={experiences} />
+            <Title>Experiences</Title>
+          </Block>
+        </Col>
+        <Col lg={4} md={5}>
+          <Block>
+            <Img src={restaurants} />
+            <Title>Restaurants</Title>
+          </Block>
+        </Col>
+      </NoWrap>
     </Row>
   </Section>
 );

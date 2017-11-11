@@ -1,6 +1,7 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {Col} from 'react-flexbox-grid';
 import styled from 'styled-components';
+import './../Exports/style.css';
 
 const Btn = styled.span`
   font-family: CircularAir;
@@ -12,9 +13,11 @@ const Btn = styled.span`
 
 export default () => (
   <Col xsOffset={2} lg={4}>
-    <Btn>Become a host</Btn>
-    <Btn>Help</Btn>
-    <Btn>Sing Up</Btn>
-    <Btn>Log In</Btn>
+    <div className="md-hide">
+      <Btn>Become a host</Btn>
+      <Btn>Help</Btn>
+      <Btn>Sing Up</Btn>
+      <Btn>Log In</Btn>
+    </div>
   </Col>
 );

@@ -30,7 +30,7 @@ const Box = styled.div`
 `;
 
 export default () => (
-  <Col lg={5}>
+  <Col lg={5} md={7}>
     <Box>
       <Logo src={search} />
       <Input placeholder="Try Miami!" />

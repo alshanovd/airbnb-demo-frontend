@@ -17,7 +17,7 @@ const Select = styled.select`
   border-radius: 4px;
   padding: 12px 15px;
   font-family: CircularAirLight;
-  font-size: 18px;
+  font-size: 15px;
   color: #383838;
   width: 100%;
   background-image: url(${dropdown});
@@ -46,13 +46,20 @@ const VerticalMiddle = styled.div`
   align-items: center;
 `;
 
-const CopyrightText = styled(SpanRegular)`margin-left: 12px;`;
+const CopyrightText = styled(SpanRegular)`
+  font-size: 12px;
+  margin-left: 12px;
+`;
 
-const AddInfo = styled(AncRegular)`margin: 0 15px 0 0;`;
+const AddInfo = styled(AncRegular)`
+  font-size: 12px;
+  margin: 0 15px 0 0;
+`;
 
 const SocialLink = styled.a`
   padding: 3px;
   text-decoration: none;
+  font-size: 12px;
 `;
 
 const Link = styled(AncRegular)`
@@ -65,7 +72,7 @@ export default () => (
   <Footer>
     <Panel>
       <Row>
-        <Col lg={3}>
+        <Col lg={3} md={3}>
           <Select>
             <option>English</option>
             <option>Russian</option>
@@ -76,7 +83,7 @@ export default () => (
             <option>Canadian dollar</option>
           </Select>
         </Col>
-        <Col lgOffset={1} lg={2}>
+        <Col lgOffset={1} lg={2} mdOffset={1} md={2}>
           <BottomTitle>Airbnb</BottomTitle>
           <Link href="#">About us</Link>
           <Link href="#">Careers</Link>
@@ -85,7 +92,7 @@ export default () => (
           <Link href="#">Help</Link>
           <Link href="#">Diversity & Belongin</Link>
         </Col>
-        <Col lgOffset={1} lg={2}>
+        <Col lgOffset={1} lg={2} mdOffset={1} md={2}>
           <BottomTitle>Discover</BottomTitle>
           <Link href="#">Trust & Safety</Link>
           <Link href="#">Travel Credit</Link>
@@ -95,7 +102,7 @@ export default () => (
           <Link href="#">Guidebooks</Link>
           <Link href="#">Airbnbmag</Link>
         </Col>
-        <Col lgOffset={1} lg={2}>
+        <Col lgOffset={1} lg={2} mdOffset={1} md={2}>
           <BottomTitle>Hosting</BottomTitle>
           <Link href="#">Why Host</Link>
           <Link href="#">Hospitality</Link>
@@ -107,13 +114,13 @@ export default () => (
 
     <FooterBlock>
       <Row>
-        <Col lg={2}>
+        <Col lg={2} md={2}>
           <VerticalMiddle>
             <img src={footerlogo} alt="" />
             <CopyrightText>© Airbnb Inc.</CopyrightText>
           </VerticalMiddle>
         </Col>
-        <Col lg={4} lgOffset={6}>
+        <Col lg={4} lgOffset={6} md={5} mdOffset={5}>
           <VerticalMiddle>
             <AddInfo href="#">Terms</AddInfo>
             <AddInfo href="#">Privacy</AddInfo>

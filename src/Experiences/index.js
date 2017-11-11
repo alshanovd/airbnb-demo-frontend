@@ -13,7 +13,9 @@ import {
   Img,
   Reviews,
   SectionHead,
+  NoWrap,
 } from './../Exports';
+import './../Exports/style.css';
 import forest from './forest.png';
 import salsa from './salsa.png';
 import mountian from './mountian.png';
@@ -35,75 +37,79 @@ export default () => (
       <SeeAll>See all</SeeAll>
     </SectionHead>
     <Row>
-      <NextPage />
-      <Col lg={3}>
-        <Img src={forest} />
-        <Desc>
-          <ParLight>
-            <Price>$29</Price>
-            Forest therapy
-          </ParLight>
-          <Stars>
-            <Star />
-            <Star />
-            <Star />
-            <Star />
-            <Star />
-            <Reviews>47 reviews</Reviews>
-          </Stars>
-        </Desc>
-      </Col>
-      <Col lg={3}>
-        <Img src={whale} />
-        <Desc>
-          <ParLight>
-            <Price>$69</Price>
-            Whale watching
-          </ParLight>
-          <Stars>
-            <Star />
-            <Star />
-            <Star />
-            <Star />
-            <Star />
-            <Reviews>45 reviews</Reviews>
-          </Stars>
-        </Desc>
-      </Col>
-      <Col lg={3}>
-        <Img src={mountian} />
-        <Desc>
-          <ParLight>
-            <Price>$69</Price>
-            Table Mountain Summit, Cable Car Down
-          </ParLight>
-          <Stars>
-            <Star />
-            <Star />
-            <Star />
-            <Star />
-            <Star />
-            <Reviews>44 reviews</Reviews>
-          </Stars>
-        </Desc>
-      </Col>
-      <Col lg={3}>
-        <Img src={salsa} />
-        <Desc>
-          <ParLight>
-            <Price>$50</Price>
-            Salsa Night
-          </ParLight>
-          <Stars>
-            <Star />
-            <Star />
-            <Star />
-            <Star />
-            <Star />
-            <Reviews>49 reviews</Reviews>
-          </Stars>
-        </Desc>
-      </Col>
+      <NoWrap>
+        <div className="md-hide">
+          <NextPage />
+        </div>
+        <Col lg={3} md={4}>
+          <Img src={forest} />
+          <Desc>
+            <ParLight>
+              <Price>$29</Price>
+              Forest therapy
+            </ParLight>
+            <Stars>
+              <Star />
+              <Star />
+              <Star />
+              <Star />
+              <Star />
+              <Reviews>47 reviews</Reviews>
+            </Stars>
+          </Desc>
+        </Col>
+        <Col lg={3} md={4}>
+          <Img src={whale} />
+          <Desc>
+            <ParLight>
+              <Price>$69</Price>
+              Whale watching
+            </ParLight>
+            <Stars>
+              <Star />
+              <Star />
+              <Star />
+              <Star />
+              <Star />
+              <Reviews>45 reviews</Reviews>
+            </Stars>
+          </Desc>
+        </Col>
+        <Col lg={3} md={4}>
+          <Img src={mountian} />
+          <Desc>
+            <ParLight>
+              <Price>$69</Price>
+              Table Mountain Summit, Cable Car Down
+            </ParLight>
+            <Stars>
+              <Star />
+              <Star />
+              <Star />
+              <Star />
+              <Star />
+              <Reviews>44 reviews</Reviews>
+            </Stars>
+          </Desc>
+        </Col>
+        <Col lg={3} md={4}>
+          <Img src={salsa} />
+          <Desc>
+            <ParLight>
+              <Price>$50</Price>
+              Salsa Night
+            </ParLight>
+            <Stars>
+              <Star />
+              <Star />
+              <Star />
+              <Star />
+              <Star />
+              <Reviews>49 reviews</Reviews>
+            </Stars>
+          </Desc>
+        </Col>
+      </NoWrap>
     </Row>
   </Section>
 );

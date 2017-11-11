@@ -1,7 +1,17 @@
 import React from 'react';
 import {Row, Col} from 'react-flexbox-grid';
 import styled from 'styled-components';
-import {ParRegular, SectionHead, H2, Section, SeeAll, NextPage, Img} from './../Exports';
+import {
+  ParRegular,
+  SectionHead,
+  H2,
+  Section,
+  SeeAll,
+  NextPage,
+  Img,
+  NoWrap,
+} from './../Exports';
+import './../Exports/style.css';
 import paris from './paris.png';
 import losangeles from './losangeles.png';
 import seoul from './seoul.png';
@@ -22,31 +32,35 @@ export default () => (
       <SeeAll>See all</SeeAll>
     </SectionHead>
     <Row>
-      <NextPageFeatured />
-      <Col lg={2}>
-        <Img src={paris} />
-        <Title>Paris</Title>
-      </Col>
-      <Col lg={2}>
-        <Img src={losangeles} />
-        <Title>Miami</Title>
-      </Col>
-      <Col lg={2}>
-        <Img src={seoul} />
-        <Title>Tokyo</Title>
-      </Col>
-      <Col lg={2}>
-        <Img src={capetown} />
-        <Title>Cape town</Title>
-      </Col>
-      <Col lg={2}>
-        <Img src={tokyo} />
-        <Title>Seoul</Title>
-      </Col>
-      <Col lg={2}>
-        <Img src={miami} />
-        <Title>Los Angeles</Title>
-      </Col>
+      <NoWrap>
+        <div className="md-hide">
+          <NextPageFeatured />
+        </div>
+        <Col lg={2} md={3}>
+          <Img src={paris} />
+          <Title>Paris</Title>
+        </Col>
+        <Col lg={2} md={3}>
+          <Img src={losangeles} />
+          <Title>Miami</Title>
+        </Col>
+        <Col lg={2} md={3}>
+          <Img src={seoul} />
+          <Title>Tokyo</Title>
+        </Col>
+        <Col lg={2} md={3}>
+          <Img src={capetown} />
+          <Title>Cape town</Title>
+        </Col>
+        <Col lg={2} md={3}>
+          <Img src={tokyo} />
+          <Title>Seoul</Title>
+        </Col>
+        <Col lg={2} md={3}>
+          <Img src={miami} />
+          <Title>Los Angeles</Title>
+        </Col>
+      </NoWrap>
     </Row>
   </Section>
 );
