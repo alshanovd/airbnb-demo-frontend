@@ -14,8 +14,8 @@ import {
   Img,
   SectionHead,
   NoWrap,
+  MdHide,
 } from './../Exports';
-import './../Exports/style.css';
 import lasalentina from './lasalentina.png';
 import dreamy from './dreamy.png';
 import bedr3 from './bedr3.png';
@@ -35,10 +35,10 @@ export default () => (
     </SectionHead>
     <Row>
       <NoWrap>
-        <div className="md-hide">
+        <MdHide>
           <NextPage />
-        </div>
-        <Col lg={4} md={5}>
+        </MdHide>
+        <Col lg={4} md={5} xs={9}>
           <Img src={lasalentina} />
           <Desc>
             <ParBold>$82 La Salentina, see, nature & relax</ParBold>
@@ -53,7 +53,7 @@ export default () => (
             </Stars>
           </Desc>
         </Col>
-        <Col lg={4} md={5}>
+        <Col lg={4} md={5} xs={9}>
           <Img src={bedr3} />
           <Desc>
             <ParBold>$82 Your private 3 bedr. riad and exclusi...</ParBold>
@@ -68,7 +68,7 @@ export default () => (
             </Stars>
           </Desc>
         </Col>
-        <Col lg={4} md={5}>
+        <Col lg={4} md={5} xs={9}>
           <Img src={dreamy} />
           <Desc>
             <ParBold>$200 Dreamy Tropical Tree House</ParBold>

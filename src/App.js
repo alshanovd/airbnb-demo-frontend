@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
-import styled from 'styled-components';
 import 'normalize.css';
-
+import styled from 'styled-components';
 import {Grid} from 'react-flexbox-grid';
-
 import Header from './Header';
 import Explore from './Explore';
 import Experiences from './Experiences';
@@ -12,17 +10,19 @@ import Popular from './Popular';
 import Featured from './Featured';
 import Footer from './Footer';
 
-const MaxWidth = styled.div`
-  max-width: 976px;
-  margin-right: auto;
-  margin-left: auto;
-  display: flex;
+const Wrapper = styled.div`
+  @media (min-width: 976px) {
+    max-width: 976px;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+  }
 `;
 
 class App extends Component {
   render() {
     return (
-      <MaxWidth>
+      <Wrapper>
         <Grid fluid>
           <Header />
           <Explore />
@@ -32,7 +32,7 @@ class App extends Component {
           <Featured />
           <Footer />
         </Grid>
-      </MaxWidth>
+      </Wrapper>
     );
   }
 }

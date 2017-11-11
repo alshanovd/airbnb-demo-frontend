@@ -14,8 +14,8 @@ import {
   Reviews,
   SectionHead,
   NoWrap,
+  MdHide,
 } from './../Exports';
-import './../Exports/style.css';
 import forest from './forest.png';
 import salsa from './salsa.png';
 import mountian from './mountian.png';
@@ -28,7 +28,12 @@ const Desc = styled.p`
   color: #383838;
 `;
 
-const Price = styled(SpanBold)`padding-right: 3px;`;
+const Price = styled(SpanBold)`
+  padding-right: 3px;
+  @media (max-width: 320px) {
+    font-size: 13px;
+  }
+`;
 
 export default () => (
   <Section>
@@ -38,10 +43,10 @@ export default () => (
     </SectionHead>
     <Row>
       <NoWrap>
-        <div className="md-hide">
+        <MdHide>
           <NextPage />
-        </div>
-        <Col lg={3} md={4}>
+        </MdHide>
+        <Col lg={3} md={4} xs={6}>
           <Img src={forest} />
           <Desc>
             <ParLight>
@@ -58,7 +63,7 @@ export default () => (
             </Stars>
           </Desc>
         </Col>
-        <Col lg={3} md={4}>
+        <Col lg={3} md={4} xs={6}>
           <Img src={whale} />
           <Desc>
             <ParLight>
@@ -75,7 +80,7 @@ export default () => (
             </Stars>
           </Desc>
         </Col>
-        <Col lg={3} md={4}>
+        <Col lg={3} md={4} xs={6}>
           <Img src={mountian} />
           <Desc>
             <ParLight>
@@ -92,7 +97,7 @@ export default () => (
             </Stars>
           </Desc>
         </Col>
-        <Col lg={3} md={4}>
+        <Col lg={3} md={4} xs={6}>
           <Img src={salsa} />
           <Desc>
             <ParLight>

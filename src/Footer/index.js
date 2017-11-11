@@ -8,7 +8,12 @@ import facebook from './facebook.svg';
 import twitter from './twitter.svg';
 import instagram from './instagram.svg';
 
-const Panel = styled.div`padding: 48px 0;`;
+const Panel = styled.div`
+  padding: 48px 0;
+  @media (min-width: 320px) {
+    padding: 16px 0 24px;
+  }
+`;
 const Footer = styled.footer`box-shadow: 0px -0.5px 0px rgba(72, 72, 72, 0.3);`;
 const Select = styled.select`
   background: #ffffff;
@@ -27,6 +32,10 @@ const Select = styled.select`
   &:last-child {
     margin-top: 16px;
   }
+  @media (min-width: 320px) {
+    font-size: 12px;
+    padding: 12px 8px;
+  }
 `;
 
 const BottomTitle = styled.h3`
@@ -44,6 +53,7 @@ const FooterBlock = styled.div`
 const VerticalMiddle = styled.div`
   display: flex;
   align-items: center;
+  height: 100%;
 `;
 
 const CopyrightText = styled(SpanRegular)`
@@ -68,46 +78,75 @@ const Link = styled(AncRegular)`
   margin: 8px 0 0;
 `;
 
+const MdSize = styled.div`@media (max-width: 767px) {display: none;}`;
+const XsSize = styled.div`@media (min-width: 768px) {display: none;}`;
+
 export default () => (
   <Footer>
     <Panel>
       <Row>
-        <Col lg={3} md={3}>
-          <Select>
-            <option>English</option>
-            <option>Russian</option>
-            <option>Deutsch</option>
-          </Select>
-          <Select>
-            <option>United Sates dollar</option>
-            <option>Canadian dollar</option>
-          </Select>
+        <Col lg={3} md={3} xs={12}>
+          {/* TODO: спросить как тут сделать правильно */}
+          <MdSize>
+            <Select>
+              <option>English</option>
+              <option>Russian</option>
+              <option>Deutsch</option>
+            </Select>
+            <Select>
+              <option>United Sates dollar</option>
+              <option>Canadian dollar</option>
+            </Select>
+          </MdSize>
+          <XsSize>
+            <Row>
+              <Col xs={6}>
+                <Select>
+                  <option>English</option>
+                  <option>Russian</option>
+                  <option>Deutsch</option>
+                </Select>
+              </Col>
+              <Col xs={6}>
+                <Select>
+                  <option>United Sates dollar</option>
+                  <option>Canadian dollar</option>
+                </Select>
+              </Col>
+            </Row>
+          </XsSize>
         </Col>
         <Col lgOffset={1} lg={2} mdOffset={1} md={2}>
-          <BottomTitle>Airbnb</BottomTitle>
-          <Link href="#">About us</Link>
-          <Link href="#">Careers</Link>
-          <Link href="#">Press</Link>
-          <Link href="#">Policies</Link>
-          <Link href="#">Help</Link>
-          <Link href="#">Diversity & Belongin</Link>
+          <MdSize>
+            <BottomTitle>Airbnb</BottomTitle>
+            <Link href="#">About us</Link>
+            <Link href="#">Careers</Link>
+            <Link href="#">Press</Link>
+            <Link href="#">Policies</Link>
+            <Link href="#">Help</Link>
+            <Link href="#">Diversity & Belongin</Link>
+          </MdSize>
         </Col>
         <Col lgOffset={1} lg={2} mdOffset={1} md={2}>
-          <BottomTitle>Discover</BottomTitle>
-          <Link href="#">Trust & Safety</Link>
-          <Link href="#">Travel Credit</Link>
-          <Link href="#">Gift Cards</Link>
-          <Link href="#">Airbnb Citizen</Link>
-          <Link href="#">Business Travel</Link>
-          <Link href="#">Guidebooks</Link>
-          <Link href="#">Airbnbmag</Link>
+          <MdSize>
+            <BottomTitle>Discover</BottomTitle>
+            <Link href="#">Trust & Safety</Link>
+            <Link href="#">Travel Credit</Link>
+            <Link href="#">Gift Cards</Link>
+            <Link href="#">Airbnb Citizen</Link>
+            <Link href="#">Business Travel</Link>
+            <Link href="#">Guidebooks</Link>
+            <Link href="#">Airbnbmag</Link>
+          </MdSize>
         </Col>
         <Col lgOffset={1} lg={2} mdOffset={1} md={2}>
-          <BottomTitle>Hosting</BottomTitle>
-          <Link href="#">Why Host</Link>
-          <Link href="#">Hospitality</Link>
-          <Link href="#">Responsible Hosting</Link>
-          <Link href="#">Community Center</Link>
+          <MdSize>
+            <BottomTitle>Hosting</BottomTitle>
+            <Link href="#">Why Host</Link>
+            <Link href="#">Hospitality</Link>
+            <Link href="#">Responsible Hosting</Link>
+            <Link href="#">Community Center</Link>
+          </MdSize>
         </Col>
       </Row>
     </Panel>

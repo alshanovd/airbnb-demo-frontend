@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {Col} from 'react-flexbox-grid';
 import styled from 'styled-components';
 import search from './search.svg';
@@ -30,7 +30,7 @@ const Box = styled.div`
 `;
 
 export default () => (
-  <Col lg={5} md={7}>
+  <Col lg={5} md={7} xs={10}>
     <Box>
       <Logo src={search} />
       <Input placeholder="Try Miami!" />

@@ -14,6 +14,11 @@ export const H2 = styled.h2`
   color: #383838;
   margin: 24px 0;
   justify-content: space-between;
+  @media (max-width: 320px) {
+    font-size: 24px;
+    margin: 16px 0;
+    line-height: 28px;
+  }
 `;
 
 export const Section = styled.section`
@@ -21,6 +26,8 @@ export const Section = styled.section`
   display: flex;
   flex-direction: column;
   position: relative;
+  width: 100%;
+  overflow: hidden;
 `;
 
 export const SeeAll = styled.a`
@@ -31,6 +38,7 @@ export const SeeAll = styled.a`
   color: #383838;
   text-decoration: none;
   cursor: pointer;
+  white-space: nowrap;
   &:after {
     padding: 8px;
     content: url(${seeall});
@@ -61,6 +69,9 @@ const Span = styled.span`
   font-size: 15px;
   line-height: 18px;
   color: #383838;
+  @media (max-width: 320px) {
+    font-size: 13px;
+  }
 `;
 
 export const SpanBold = styled(Span)`font-family: CircularAirBold;`;
@@ -72,6 +83,9 @@ const Par = styled.p`
   line-height: 18px;
   color: #383838;
   margin: 0;
+  @media (max-width: 320px) {
+    font-size: 13px;
+  }
 `;
 
 export const ParBold = styled(Par)`font-family: CircularAirBold;`;
@@ -91,7 +105,7 @@ const Anc = styled.a`
 export const AncRegular = styled(Anc)`font-family: CircularAir;`;
 
 const StarImg = styled.img`
-  margin-right: 5px;
+  margin-right: 3px;
   height: 12px;
 `;
 
@@ -122,3 +136,5 @@ export const NoWrap = styled.div`
   width: 100%;
   overflow: hidden;
 `;
+
+export const MdHide = styled.div`@media (max-width: 768px) {display: none;}`;
