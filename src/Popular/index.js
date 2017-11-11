@@ -1,0 +1,69 @@
+import React from 'react';
+import {Row, Col} from 'react-flexbox-grid';
+import styled from 'styled-components';
+import {
+  ParLight,
+  H2,
+  Section,
+  SeeAll,
+  NextPage,
+  ParBold,
+  Img,
+  SectionHead,
+} from './../Exports';
+import chum from './chum.png';
+import hanjan from './hanjan.png';
+import primemeats from './primemeats.png';
+import seaprice from './seaprice.png';
+
+const Descr = styled(ParBold)`
+  font-size: 10px;
+  margin: 12px 0 0;
+  text-transform: uppercase;
+`;
+
+const Title = styled(ParBold)`
+  font-size: 18px;
+  margin: 2px 0 0;
+`;
+
+const SubTitle = styled(ParLight)`
+  font-size: 18px;
+  margin: 4px 0 0;
+`;
+
+export default () => (
+  <Section>
+    <SectionHead>
+      <H2>Popular reservations around the world</H2>
+      <SeeAll>See all</SeeAll>
+    </SectionHead>
+    <Row>
+      <NextPage />
+      <Col lg={3}>
+        <Img src={chum} />
+        <Descr>Speakeasy</Descr>
+        <Title>Chumley's</Title>
+        <SubTitle>About $60 per person</SubTitle>
+      </Col>
+      <Col lg={3}>
+        <Img src={hanjan} />
+        <Descr>Korean gastropub</Descr>
+        <Title>Hanjan</Title>
+        <SubTitle>About $50 per person</SubTitle>
+      </Col>
+      <Col lg={3}>
+        <Img src={primemeats} />
+        <Descr>German american</Descr>
+        <Title>Prime Meats</Title>
+        <SubTitle>About $55 per person</SubTitle>
+      </Col>
+      <Col lg={3}>
+        <Img src={seaprice} />
+        <Descr>Fine seafood</Descr>
+        <Title>Seaprice</Title>
+        <SubTitle>About $70 per person</SubTitle>
+      </Col>
+    </Row>
+  </Section>
+);
