@@ -1,21 +1,21 @@
 import React from 'react';
-import {Row, Col} from 'react-flexbox-grid';
+import { Row, Col } from 'react-flexbox-grid';
 import styled from 'styled-components';
 import {
-  ParLight,
+  ParagraphLight,
   Stars,
   Star,
   H2,
   Section,
   SeeAll,
   NextPage,
-  ParBold,
+  ParagraphBold,
   Reviews,
   Img,
   SectionHead,
   NoWrap,
   MdHide,
-} from './../Exports';
+} from './../UI';
 import lasalentina from './lasalentina.png';
 import dreamy from './dreamy.png';
 import bedr3 from './bedr3.png';
@@ -25,7 +25,7 @@ const Desc = styled.div`
   padding: 0;
 `;
 
-const Beds = styled(ParLight)`margin: 2px 0 0;`;
+const Beds = styled(ParagraphLight)`margin: 2px 0 0;`;
 
 export default () => (
   <Section>
@@ -38,10 +38,10 @@ export default () => (
         <MdHide>
           <NextPage />
         </MdHide>
-        <Col lg={4} md={5} xs={9}>
+        <Col xs={9} md={5} lg={4}>
           <Img src={lasalentina} />
           <Desc>
-            <ParBold>$82 La Salentina, see, nature & relax</ParBold>
+            <ParagraphBold>$82 La Salentina, see, nature & relax</ParagraphBold>
             <Beds>Entrie house · 9 beds</Beds>
             <Stars>
               <Star />
@@ -53,10 +53,12 @@ export default () => (
             </Stars>
           </Desc>
         </Col>
-        <Col lg={4} md={5} xs={9}>
+        <Col xs={9} md={5} lg={4}>
           <Img src={bedr3} />
           <Desc>
-            <ParBold>$82 Your private 3 bedr. riad and exclusi...</ParBold>
+            <ParagraphBold>
+              $82 Your private 3 bedr. riad and exclusi...
+            </ParagraphBold>
             <Beds>Entrie house · 5 beds</Beds>
             <Stars>
               <Star />
@@ -68,10 +70,10 @@ export default () => (
             </Stars>
           </Desc>
         </Col>
-        <Col lg={4} md={5} xs={9}>
+        <Col xs={9} md={5} lg={4}>
           <Img src={dreamy} />
           <Desc>
-            <ParBold>$200 Dreamy Tropical Tree House</ParBold>
+            <ParagraphBold>$200 Dreamy Tropical Tree House</ParagraphBold>
             <Beds>Entrie treehouse · 1 beds</Beds>
             <Stars>
               <Star />

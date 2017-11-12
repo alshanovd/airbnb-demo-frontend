@@ -1,8 +1,8 @@
 import React from 'react';
-import {Row, Col} from 'react-flexbox-grid';
+import { Row, Col } from 'react-flexbox-grid';
 import styled from 'styled-components';
 import {
-  ParRegular,
+  ParagraphRegular,
   SectionHead,
   H2,
   Section,
@@ -11,7 +11,7 @@ import {
   Img,
   NoWrap,
   MdHide,
-} from './../Exports';
+} from './../UI';
 import paris from './paris.png';
 import losangeles from './losangeles.png';
 import seoul from './seoul.png';
@@ -20,16 +20,21 @@ import tokyo from './tokyo.png';
 import miami from './miami.png';
 
 const NextPageFeatured = styled(NextPage)`top: 59%;`;
-const Title = styled(ParRegular)`
-  margin: 8px 0 0;
-  @media (max-width: 320px) {
-    margin: 4px 0 0;
-    font-size: 12px;
-    line-height: 14px;
+const Title = styled(ParagraphRegular)`
+  margin: 4px 0 0;
+  font-size: 12px;
+  line-height: 14px;
+  @media (min-width: 321px) {
+    margin: 8px 0 0;
   }
 `;
 
-const SeeAllXsHide = styled(SeeAll)`@media (max-width: 320px) {display: none;}`;
+const SeeAllXsHide = styled(SeeAll)`
+  display: none;
+  @media (min-width: 321px) {
+    display: block;
+  }
+`;
 
 export default () => (
   <Section>
@@ -42,27 +47,27 @@ export default () => (
         <MdHide>
           <NextPageFeatured />
         </MdHide>
-        <Col lg={2} md={3} xs={4}>
+        <Col xs={4} md={3} lg={2}>
           <Img src={paris} />
           <Title>Paris</Title>
         </Col>
-        <Col lg={2} md={3} xs={4}>
+        <Col xs={4} md={3} lg={2}>
           <Img src={losangeles} />
           <Title>Miami</Title>
         </Col>
-        <Col lg={2} md={3} xs={4}>
+        <Col xs={4} md={3} lg={2}>
           <Img src={seoul} />
           <Title>Tokyo</Title>
         </Col>
-        <Col lg={2} md={3} xs={4}>
+        <Col xs={4} md={3} lg={2}>
           <Img src={capetown} />
           <Title>Cape town</Title>
         </Col>
-        <Col lg={2} md={3} xs={4}>
+        <Col xs={4} md={3} lg={2}>
           <Img src={tokyo} />
           <Title>Seoul</Title>
         </Col>
-        <Col lg={2} md={3} xs={4}>
+        <Col xs={4} md={3} lg={2}>
           <Img src={miami} />
           <Title>Los Angeles</Title>
         </Col>

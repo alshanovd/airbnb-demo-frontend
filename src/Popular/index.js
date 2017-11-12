@@ -1,24 +1,24 @@
 import React from 'react';
-import {Row, Col} from 'react-flexbox-grid';
+import { Row, Col } from 'react-flexbox-grid';
 import styled from 'styled-components';
 import {
-  ParLight,
+  ParagraphLight,
   H2,
   Section,
   SeeAll,
   NextPage,
-  ParBold,
+  ParagraphBold,
   Img,
   SectionHead,
   NoWrap,
   MdHide,
-} from './../Exports';
+} from './../UI';
 import chum from './chum.png';
 import hanjan from './hanjan.png';
 import primemeats from './primemeats.png';
 import seaprice from './seaprice.png';
 
-const Descr = styled(ParBold)`
+const Descr = styled(ParagraphBold)`
   font-size: 10px;
   margin: 12px 0 0;
   text-transform: uppercase;
@@ -28,7 +28,7 @@ const Descr = styled(ParBold)`
   }
 `;
 
-const Title = styled(ParBold)`
+const Title = styled(ParagraphBold)`
   font-size: 18px;
   margin: 2px 0 0;
   @media (min-width: 320px) {
@@ -37,7 +37,7 @@ const Title = styled(ParBold)`
   }
 `;
 
-const SubTitle = styled(ParLight)`
+const SubTitle = styled(ParagraphLight)`
   font-size: 18px;
   margin: 4px 0 0;
   @media (min-width: 320px) {

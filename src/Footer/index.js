@@ -1,7 +1,7 @@
 import React from 'react';
-import {Row, Col} from 'react-flexbox-grid';
+import { Row, Col } from 'react-flexbox-grid';
 import styled from 'styled-components';
-import {SpanRegular, AncRegular} from './../Exports';
+import { WordRegular, AncorRegular } from './../UI';
 import dropdown from './dropdown.svg';
 import footerlogo from './footer-logo.svg';
 import facebook from './facebook.svg';
@@ -21,13 +21,13 @@ const Select = styled.select`
   box-sizing: border-box;
   border-radius: 4px;
   padding: 12px 15px;
-  font-family: CircularAirLight;
+  font-family: CircularAirLight, 'Helvetica Neue', Helvetica, sans-serif;
   font-size: 15px;
   color: #383838;
   width: 100%;
   background-image: url(${dropdown});
   background-repeat: no-repeat;
-  -webkit-appearance: none;
+  appearance: none;
   background-position: 92% center;
   &:last-child {
     margin-top: 16px;
@@ -39,13 +39,13 @@ const Select = styled.select`
 `;
 
 const BottomTitle = styled.h3`
-  font-family: CircularAirBold;
+  font-family: CircularAirBold, 'Helvetica Neue', Helvetica, sans-serif;
   font-size: 15px;
   color: #383838;
   margin: 0 0 16px 0;
 `;
 
-const FooterBlock = styled.div`
+const CopyrightBlock = styled.div`
   border-top: 1px solid rgba(72, 72, 72, 0.08);
   padding: 35px 0;
 `;
@@ -56,12 +56,12 @@ const VerticalMiddle = styled.div`
   height: 100%;
 `;
 
-const CopyrightText = styled(SpanRegular)`
+const CopyrightText = styled(WordRegular)`
   font-size: 12px;
   margin-left: 12px;
 `;
 
-const AddInfo = styled(AncRegular)`
+const AddInfo = styled(AncorRegular)`
   font-size: 12px;
   margin: 0 15px 0 0;
 `;
@@ -72,51 +72,41 @@ const SocialLink = styled.a`
   font-size: 12px;
 `;
 
-const Link = styled(AncRegular)`
+const Link = styled(AncorRegular)`
   display: block;
   width: 100%;
   margin: 8px 0 0;
 `;
 
-const MdSize = styled.div`@media (max-width: 767px) {display: none;}`;
-const XsSize = styled.div`@media (min-width: 768px) {display: none;}`;
+const MdSize = styled.div`
+  display: none;
+  @media (min-width: 768px) {
+    display: block;
+  }
+`;
 
 export default () => (
   <Footer>
     <Panel>
       <Row>
-        <Col lg={3} md={3} xs={12}>
-          {/* TODO: спросить как тут сделать правильно */}
-          <MdSize>
-            <Select>
-              <option>English</option>
-              <option>Russian</option>
-              <option>Deutsch</option>
-            </Select>
-            <Select>
-              <option>United Sates dollar</option>
-              <option>Canadian dollar</option>
-            </Select>
-          </MdSize>
-          <XsSize>
-            <Row>
-              <Col xs={6}>
-                <Select>
-                  <option>English</option>
-                  <option>Russian</option>
-                  <option>Deutsch</option>
-                </Select>
-              </Col>
-              <Col xs={6}>
-                <Select>
-                  <option>United Sates dollar</option>
-                  <option>Canadian dollar</option>
-                </Select>
-              </Col>
-            </Row>
-          </XsSize>
+        <Col xs={12} md={3} lg={3}>
+          <Row>
+            <Col xs={6} md={12} lg={12}>
+              <Select>
+                <option>English</option>
+                <option>Russian</option>
+                <option>Deutsch</option>
+              </Select>
+            </Col>
+            <Col xs={6} md={12} lg={12}>
+              <Select>
+                <option>United Sates dollar</option>
+                <option>Canadian dollar</option>
+              </Select>
+            </Col>
+          </Row>
         </Col>
-        <Col lgOffset={1} lg={2} mdOffset={1} md={2}>
+        <Col mdOffset={1} md={2} lgOffset={1} lg={2}>
           <MdSize>
             <BottomTitle>Airbnb</BottomTitle>
             <Link href="#">About us</Link>
@@ -127,7 +117,7 @@ export default () => (
             <Link href="#">Diversity & Belongin</Link>
           </MdSize>
         </Col>
-        <Col lgOffset={1} lg={2} mdOffset={1} md={2}>
+        <Col mdOffset={1} md={2} lgOffset={1} lg={2}>
           <MdSize>
             <BottomTitle>Discover</BottomTitle>
             <Link href="#">Trust & Safety</Link>
@@ -139,7 +129,7 @@ export default () => (
             <Link href="#">Airbnbmag</Link>
           </MdSize>
         </Col>
-        <Col lgOffset={1} lg={2} mdOffset={1} md={2}>
+        <Col mdOffset={1} md={2} lgOffset={1} lg={2}>
           <MdSize>
             <BottomTitle>Hosting</BottomTitle>
             <Link href="#">Why Host</Link>
@@ -151,15 +141,15 @@ export default () => (
       </Row>
     </Panel>
 
-    <FooterBlock>
+    <CopyrightBlock>
       <Row>
-        <Col lg={2} md={2}>
+        <Col md={2} lg={2}>
           <VerticalMiddle>
             <img src={footerlogo} alt="" />
             <CopyrightText>© Airbnb Inc.</CopyrightText>
           </VerticalMiddle>
         </Col>
-        <Col lg={4} lgOffset={6} md={5} mdOffset={5}>
+        <Col md={5} mdOffset={5} lg={4} lgOffset={6}>
           <VerticalMiddle>
             <AddInfo href="#">Terms</AddInfo>
             <AddInfo href="#">Privacy</AddInfo>
@@ -176,6 +166,6 @@ export default () => (
           </VerticalMiddle>
         </Col>
       </Row>
-    </FooterBlock>
+    </CopyrightBlock>
   </Footer>
 );

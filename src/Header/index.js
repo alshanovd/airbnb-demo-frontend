@@ -1,10 +1,10 @@
 import React from 'react';
-import {Row, Col} from 'react-flexbox-grid';
+import { Row, Col } from 'react-flexbox-grid';
 import styled from 'styled-components';
 import Navi from './Navi';
 import Search from './Search';
 import shape from './shape.svg';
-import phonemenu from './phonemenu.png';
+import menu from './menu.svg';
 
 const Header = styled.header`
   display: flex;
@@ -23,10 +23,10 @@ const Menu = styled.img`@media (min-width: 769px) {display: none;}`;
 export default () => (
   <Row>
     <Header>
-      <Col lg={1} md={1} xs={2}>
+      <Col xs={2} md={1} lg={1}>
         <VerticalMiddle>
           <img alt="logo" src={shape} />
-          <Menu alt="phonemenu" src={phonemenu} />
+          <Menu alt="menu" src={menu} />
         </VerticalMiddle>
       </Col>
       <Search />

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Row, Col} from 'react-flexbox-grid';
+import { Row, Col } from 'react-flexbox-grid';
 import styled from 'styled-components';
 import {
   Stars,
@@ -8,32 +8,26 @@ import {
   Section,
   SeeAll,
   NextPage,
-  SpanBold,
-  ParLight,
+  WordBold,
+  ParagraphLight,
   Img,
   Reviews,
   SectionHead,
   NoWrap,
-  MdHide,
-} from './../Exports';
+} from './../UI';
 import forest from './forest.png';
 import salsa from './salsa.png';
 import mountian from './mountian.png';
 import whale from './whale.png';
 
 const Desc = styled.p`
-  font-family: CircularAirBold;
+  font-family: CircularAirBold, 'Helvetica Neue', Helvetica, sans-serif;
   margin: 8px 0 0;
   padding: 0;
   color: #383838;
 `;
 
-const Price = styled(SpanBold)`
-  padding-right: 3px;
-  @media (max-width: 320px) {
-    font-size: 13px;
-  }
-`;
+const Price = styled(WordBold)`padding-right: 3px;`;
 
 export default () => (
   <Section>
@@ -43,16 +37,14 @@ export default () => (
     </SectionHead>
     <Row>
       <NoWrap>
-        <MdHide>
-          <NextPage />
-        </MdHide>
-        <Col lg={3} md={4} xs={6}>
+        <NextPage />
+        <Col xs={6} md={4} lg={3}>
           <Img src={forest} />
           <Desc>
-            <ParLight>
+            <ParagraphLight>
               <Price>$29</Price>
               Forest therapy
-            </ParLight>
+            </ParagraphLight>
             <Stars>
               <Star />
               <Star />
@@ -63,13 +55,13 @@ export default () => (
             </Stars>
           </Desc>
         </Col>
-        <Col lg={3} md={4} xs={6}>
+        <Col xs={6} md={4} lg={3}>
           <Img src={whale} />
           <Desc>
-            <ParLight>
+            <ParagraphLight>
               <Price>$69</Price>
               Whale watching
-            </ParLight>
+            </ParagraphLight>
             <Stars>
               <Star />
               <Star />
@@ -80,13 +72,13 @@ export default () => (
             </Stars>
           </Desc>
         </Col>
-        <Col lg={3} md={4} xs={6}>
+        <Col xs={6} md={4} lg={3}>
           <Img src={mountian} />
           <Desc>
-            <ParLight>
+            <ParagraphLight>
               <Price>$69</Price>
               Table Mountain Summit, Cable Car Down
-            </ParLight>
+            </ParagraphLight>
             <Stars>
               <Star />
               <Star />
@@ -97,13 +89,13 @@ export default () => (
             </Stars>
           </Desc>
         </Col>
-        <Col lg={3} md={4} xs={6}>
+        <Col xs={6} md={4} lg={3}>
           <Img src={salsa} />
           <Desc>
-            <ParLight>
+            <ParagraphLight>
               <Price>$50</Price>
               Salsa Night
-            </ParLight>
+            </ParagraphLight>
             <Stars>
               <Star />
               <Star />

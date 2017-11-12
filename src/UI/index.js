@@ -8,16 +8,16 @@ import './font.css';
 export const H2 = styled.h2`
   display: flex;
   align-items: center;
-  font-family: CircularAirBold;
-  line-height: 34px;
-  font-size: 32px;
+  font-family: CircularAirBold, 'Helvetica Neue', Helvetica, sans-serif;
   color: #383838;
-  margin: 24px 0;
+  font-size: 24px;
+  margin: 16px 0;
+  line-height: 28px;
   justify-content: space-between;
-  @media (max-width: 320px) {
-    font-size: 24px;
-    margin: 16px 0;
-    line-height: 28px;
+  @media (min-width: 321px) {
+    font-size: 32px;
+    margin: 24px 0;
+    line-height: 34px;
   }
 `;
 
@@ -31,7 +31,7 @@ export const Section = styled.section`
 `;
 
 export const SeeAll = styled.a`
-  font-family: CircularAirLight;
+  font-family: CircularAirLight, 'Helvetica Neue', Helvetica, sans-serif;
   line-height: 24px;
   font-size: 14px;
   text-align: right;
@@ -48,7 +48,7 @@ export const SeeAll = styled.a`
   }
 `;
 
-export const NextPage = styled.div`
+export const NextPage = styled.button`
   background: #ffffff;
   background-image: url(${arrow});
   background-position: center center;
@@ -63,36 +63,52 @@ export const NextPage = styled.div`
   top: 52%;
   transform: translateY(-50%);
   right: -15px;
-`;
-
-const Span = styled.span`
-  font-size: 15px;
-  line-height: 18px;
-  color: #383838;
-  @media (max-width: 320px) {
-    font-size: 13px;
+  display: none;
+  @media (min-width: 769px) {
+    display: block;
   }
 `;
 
-export const SpanBold = styled(Span)`font-family: CircularAirBold;`;
-export const SpanLight = styled(Span)`font-family: CircularAirLight;`;
-export const SpanRegular = styled(Span)`font-family: CircularAir;`;
-
-const Par = styled.p`
-  font-size: 15px;
+const Word = styled.span`
+  font-size: 13px;
   line-height: 18px;
+  color: #383838;
+  @media (min-width: 321px) {
+    font-size: 15px;
+  }
+`;
+
+export const WordBold = styled(Word)`
+  font-family: CircularAirBold, 'Helvetica Neue', Helvetica, sans-serif;
+`;
+export const WordLight = styled(Word)`
+  font-family: CircularAirLight, 'Helvetica Neue', Helvetica, sans-serif;
+`;
+export const WordRegular = styled(Word)`
+  font-family: CircularAir, 'Helvetica Neue', Helvetica, sans-serif;
+`;
+
+const Paragraph = styled.p`
   color: #383838;
   margin: 0;
-  @media (max-width: 320px) {
-    font-size: 13px;
+  font-size: 13px;
+  @media (min-width: 321px) {
+    font-size: 15px;
+    line-height: 18px;
   }
 `;
 
-export const ParBold = styled(Par)`font-family: CircularAirBold;`;
-export const ParLight = styled(Par)`font-family: CircularAirLight;`;
-export const ParRegular = styled(Par)`font-family: CircularAir;`;
+export const ParagraphBold = styled(Paragraph)`
+  font-family: CircularAirBold, 'Helvetica Neue', Helvetica, sans-serif;
+`;
+export const ParagraphLight = styled(Paragraph)`
+  font-family: CircularAirLight, 'Helvetica Neue', Helvetica, sans-serif;
+`;
+export const ParagraphRegular = styled(Paragraph)`
+  font-family: CircularAir, 'Helvetica Neue', Helvetica, sans-serif;
+`;
 
-const Anc = styled.a`
+const Ancor = styled.a`
   font-size: 15px;
   line-height: 18px;
   color: #383838;
@@ -102,7 +118,9 @@ const Anc = styled.a`
   }
 `;
 
-export const AncRegular = styled(Anc)`font-family: CircularAir;`;
+export const AncorRegular = styled(Ancor)`
+  font-family: CircularAir, 'Helvetica Neue', Helvetica, sans-serif;
+`;
 
 const StarImg = styled.img`
   margin-right: 3px;
@@ -122,7 +140,7 @@ export const Stars = styled.div`
 
 export const Img = styled.img`width: 100%;`;
 
-export const Reviews = styled(SpanRegular)`font-size: 12px;`;
+export const Reviews = styled(WordRegular)`font-size: 12px;`;
 
 export const SectionHead = styled.div`
   display: flex;
@@ -137,4 +155,9 @@ export const NoWrap = styled.div`
   overflow: hidden;
 `;
 
-export const MdHide = styled.div`@media (max-width: 768px) {display: none;}`;
+export const MdHide = styled.div`
+  display: none;
+  @media (min-width: 768px) {
+    display: block;
+  }
+`;
