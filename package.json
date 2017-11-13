@@ -3,11 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-<<<<<<< HEAD
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "react-scripts": "1.0.17"
-=======
     "flexboxgrid2": "^7.0.0-alpha12",
     "normalize.css": "^7.0.0",
     "react": "^16.0.0",
@@ -15,7 +10,6 @@
     "react-flexbox-grid": "^2.0.0",
     "react-scripts": "1.0.17",
     "styled-components": "^2.2.3"
->>>>>>> 3a516ddcde20ca94183940de8479d7a1e96c352f
   },
   "scripts": {
     "start": "react-scripts start",
@@ -23,8 +17,4 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 3a516ddcde20ca94183940de8479d7a1e96c352f
