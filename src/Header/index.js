@@ -23,7 +23,7 @@ const Menu = styled.img`@media (min-width: 769px) {display: none;}`;
 export default () => (
   <Row>
     <Header>
-      <Col xs={2} md={1} lg={1}>
+      <Col xs={2} md={1}>
         <VerticalMiddle>
           <img alt="logo" src={shape} />
           <Menu alt="menu" src={menu} />

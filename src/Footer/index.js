@@ -89,16 +89,16 @@ export default () => (
   <Footer>
     <Panel>
       <Row>
-        <Col xs={12} md={3} lg={3}>
+        <Col xs={12} md={3}>
           <Row>
-            <Col xs={6} md={12} lg={12}>
+            <Col xs={6} md={12}>
               <Select>
                 <option>English</option>
                 <option>Russian</option>
                 <option>Deutsch</option>
               </Select>
             </Col>
-            <Col xs={6} md={12} lg={12}>
+            <Col xs={6} md={12}>
               <Select>
                 <option>United Sates dollar</option>
                 <option>Canadian dollar</option>
@@ -106,7 +106,7 @@ export default () => (
             </Col>
           </Row>
         </Col>
-        <Col mdOffset={1} md={2} lgOffset={1} lg={2}>
+        <Col mdOffset={1} md={2}>
           <MdSize>
             <BottomTitle>Airbnb</BottomTitle>
             <Link href="#">About us</Link>
@@ -117,7 +117,7 @@ export default () => (
             <Link href="#">Diversity & Belongin</Link>
           </MdSize>
         </Col>
-        <Col mdOffset={1} md={2} lgOffset={1} lg={2}>
+        <Col mdOffset={1} md={2}>
           <MdSize>
             <BottomTitle>Discover</BottomTitle>
             <Link href="#">Trust & Safety</Link>
@@ -129,7 +129,7 @@ export default () => (
             <Link href="#">Airbnbmag</Link>
           </MdSize>
         </Col>
-        <Col mdOffset={1} md={2} lgOffset={1} lg={2}>
+        <Col mdOffset={1} md={2}>
           <MdSize>
             <BottomTitle>Hosting</BottomTitle>
             <Link href="#">Why Host</Link>
@@ -143,7 +143,7 @@ export default () => (
 
     <CopyrightBlock>
       <Row>
-        <Col md={2} lg={2}>
+        <Col md={2}>
           <VerticalMiddle>
             <img src={footerlogo} alt="" />
             <CopyrightText>© Airbnb Inc.</CopyrightText>
