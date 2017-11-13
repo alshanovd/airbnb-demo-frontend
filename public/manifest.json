@@ -1,6 +1,11 @@
 {
+<<<<<<< HEAD
   "short_name": "React App",
   "name": "Create React App Sample",
+=======
+  "short_name": "Airbnb",
+  "name": "Airbnb Demo Frontend",
+>>>>>>> 3a516ddcde20ca94183940de8479d7a1e96c352f
   "icons": [
     {
       "src": "favicon.ico",
