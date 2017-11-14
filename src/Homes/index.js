@@ -1,17 +1,10 @@
 import React from 'react';
-import { Row, Col } from 'react-flexbox-grid';
-import styled from 'styled-components';
+import { Row } from 'react-flexbox-grid';
 import {
-  ParagraphLight,
-  Stars,
-  Star,
   H2,
   Section,
   SeeAll,
   NextPage,
-  ParagraphBold,
-  Reviews,
-  Img,
   SectionHead,
   NoWrap,
   MdHide,
@@ -19,13 +12,7 @@ import {
 import lasalentina from './lasalentina.png';
 import dreamy from './dreamy.png';
 import bedr3 from './bedr3.png';
-
-const Desc = styled.div`
-  margin: 8px 0 0;
-  padding: 0;
-`;
-
-const Beds = styled(ParagraphLight)`margin: 2px 0 0;`;
+import Home from './Home';
 
 export default () => (
   <Section>
@@ -38,53 +25,24 @@ export default () => (
         <MdHide>
           <NextPage />
         </MdHide>
-        <Col xs={9} md={5} lg={4}>
-          <Img src={lasalentina} />
-          <Desc>
-            <ParagraphBold>$82 La Salentina, see, nature & relax</ParagraphBold>
-            <Beds>Entrie house · 9 beds</Beds>
-            <Stars>
-              <Star />
-              <Star />
-              <Star />
-              <Star />
-              <Star />
-              <Reviews>97 · Superhost</Reviews>
-            </Stars>
-          </Desc>
-        </Col>
-        <Col xs={9} md={5} lg={4}>
-          <Img src={bedr3} />
-          <Desc>
-            <ParagraphBold>
-              $82 Your private 3 bedr. riad and exclusi...
-            </ParagraphBold>
-            <Beds>Entrie house · 5 beds</Beds>
-            <Stars>
-              <Star />
-              <Star />
-              <Star />
-              <Star />
-              <Star />
-              <Reviews>97 · Superhost</Reviews>
-            </Stars>
-          </Desc>
-        </Col>
-        <Col xs={9} md={5} lg={4}>
-          <Img src={dreamy} />
-          <Desc>
-            <ParagraphBold>$200 Dreamy Tropical Tree House</ParagraphBold>
-            <Beds>Entrie treehouse · 1 beds</Beds>
-            <Stars>
-              <Star />
-              <Star />
-              <Star />
-              <Star />
-              <Star />
-              <Reviews>97 · Superhost</Reviews>
-            </Stars>
-          </Desc>
-        </Col>
+        <Home
+          img={lasalentina}
+          p="$82 La Salentina, see, nature & relax"
+          beds="Entrie house · 9 beds"
+          reviews="97"
+        />
+        <Home
+          img={bedr3}
+          p="$82 Your private 3 bedr. riad and exclusi..."
+          beds="Entrie house · 5 beds"
+          reviews="85"
+        />
+        <Home
+          img={dreamy}
+          p="$200 Dreamy Tropical Tree House"
+          beds="Entrie treehouse · 1 beds"
+          reviews="69"
+        />
       </NoWrap>
     </Row>
   </Section>
