@@ -1,8 +1,9 @@
-import React from 'react';
-import { WordBold } from './../UI';
-import styled from 'styled-components';
-import { Col } from 'react-flexbox-grid';
-import home from './home.png';
+import React from "react";
+import { WordBold } from "./../UI";
+import styled from "styled-components";
+import { Col } from "react-flexbox-grid";
+import home from "./home.png";
+import { Link } from "react-router-dom";
 
 const Block = styled.div`
   border: 1px solid rgba(72, 72, 72, 0.2);
@@ -30,6 +31,7 @@ const Title = styled(WordBold)`
   width: 100%;
   padding: 12px;
   font-size: 12px;
+  text-decoration: none;
   @media (min-width: 421px) {
     margin-left: 24px;
     font-size: 17px;
@@ -38,9 +40,11 @@ const Title = styled(WordBold)`
 
 export default props => (
   <Col xs={6} md={5} lg={4}>
-    <Block>
-      <Img src={props.img} />
-      <Title>{props.title}</Title>
-    </Block>
+    <Link to={`/homes`}>
+      <Block>
+        <Img src={props.img} />
+        <Title>{props.title}</Title>
+      </Block>
+    </Link>
   </Col>
 );

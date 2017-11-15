@@ -1,10 +1,11 @@
-import React from 'react';
-import { Row, Col } from 'react-flexbox-grid';
-import styled from 'styled-components';
-import Navi from './Navi';
-import Search from './Search';
-import shape from './shape.svg';
-import menu from './menu.svg';
+import React from "react";
+import { Row, Col } from "react-flexbox-grid";
+import styled from "styled-components";
+import Navi from "./Navi";
+import Search from "./Search";
+import shape from "./shape.svg";
+import menu from "./menu.svg";
+import { Link } from "react-router-dom";
 
 const Header = styled.header`
   display: flex;
@@ -25,7 +26,9 @@ export default () => (
     <Header>
       <Col xs={2} md={1}>
         <VerticalMiddle>
-          <img alt="logo" src={shape} />
+          <Link to={`/`}>
+            <img alt="logo" src={shape} />
+          </Link>
           <Menu alt="menu" src={menu} />
         </VerticalMiddle>
       </Col>

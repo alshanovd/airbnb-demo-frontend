@@ -11,7 +11,7 @@ export default () => (
     <H2>Explore Airbnb</H2>
     <Row>
       <NoWrap>
-        <Explore img={home} title="Home" />
+        <Explore img={home} title="Homes" />
         <Explore img={experiences} title="Experiences" />
         <Explore img={restaurants} title="Restaurants" />
       </NoWrap>
