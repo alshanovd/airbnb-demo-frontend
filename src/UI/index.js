@@ -1,14 +1,14 @@
-import React from "react";
-import styled from "styled-components";
-import seeAll from "./seeAll.svg";
-import arrow from "./arrow.png";
-import star from "./star.png";
-import "./font.css";
+import React, { Component } from 'react';
+import styled from 'styled-components';
+import seeAll from './seeAll.svg';
+import arrow from './arrow.png';
+import star from './star.png';
+import './font.css';
 
 export const H2 = styled.h2`
   display: flex;
   align-items: center;
-  font-family: CircularAirBold, "Helvetica Neue", Helvetica, sans-serif;
+  font-family: CircularAirBold, 'Helvetica Neue', Helvetica, sans-serif;
   color: #383838;
   font-size: 24px;
   margin: 16px 0;
@@ -31,7 +31,7 @@ export const Section = styled.section`
 `;
 
 export const SeeAll = styled.a`
-  font-family: CircularAirLight, "Helvetica Neue", Helvetica, sans-serif;
+  font-family: CircularAirLight, 'Helvetica Neue', Helvetica, sans-serif;
   line-height: 24px;
   font-size: 14px;
   text-align: right;
@@ -78,25 +78,46 @@ const Word = styled.span`
   }
 `;
 
+export class Buttonn extends Component {
+  state = {};
+
+  handleClick() {
+    this.setState({
+      isPushed: true,
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <button onClick={this.handleClick}>baton</button>
+        {this.state.isPushed && (
+          <img src="http://forum.cxem.net/uploads/photos/monthly_2017_08/5991d7f54af3e_.png.0a4d9d92c8c7e3b6af92c868cf5a66a5.png" />
+        )}
+      </div>
+    );
+  }
+}
+
 export const Button = styled.button`
   padding: 7px 16px;
   margin: 12px 12px 12px 0;
   border: 1px solid rgba(72, 72, 72, 0.2);
   box-sizing: border-box;
   border-radius: 4px;
-  font-family: CircularAir, "Helvetica Neue", Helvetica, sans-serif;
+  font-family: CircularAir, 'Helvetica Neue', Helvetica, sans-serif;
   font-size: 14px;
   background: #ffffff;
 `;
 
 export const WordBold = styled(Word)`
-  font-family: CircularAirBold, "Helvetica Neue", Helvetica, sans-serif;
+  font-family: CircularAirBold, 'Helvetica Neue', Helvetica, sans-serif;
 `;
 export const WordLight = styled(Word)`
-  font-family: CircularAirLight, "Helvetica Neue", Helvetica, sans-serif;
+  font-family: CircularAirLight, 'Helvetica Neue', Helvetica, sans-serif;
 `;
 export const WordRegular = styled(Word)`
-  font-family: CircularAir, "Helvetica Neue", Helvetica, sans-serif;
+  font-family: CircularAir, 'Helvetica Neue', Helvetica, sans-serif;
 `;
 
 const Paragraph = styled.p`
@@ -110,13 +131,13 @@ const Paragraph = styled.p`
 `;
 
 export const ParagraphBold = styled(Paragraph)`
-  font-family: CircularAirBold, "Helvetica Neue", Helvetica, sans-serif;
+  font-family: CircularAirBold, 'Helvetica Neue', Helvetica, sans-serif;
 `;
 export const ParagraphLight = styled(Paragraph)`
-  font-family: CircularAirLight, "Helvetica Neue", Helvetica, sans-serif;
+  font-family: CircularAirLight, 'Helvetica Neue', Helvetica, sans-serif;
 `;
 export const ParagraphRegular = styled(Paragraph)`
-  font-family: CircularAir, "Helvetica Neue", Helvetica, sans-serif;
+  font-family: CircularAir, 'Helvetica Neue', Helvetica, sans-serif;
 `;
 
 const Ancor = styled.a`
@@ -130,7 +151,7 @@ const Ancor = styled.a`
 `;
 
 export const AncorRegular = styled(Ancor)`
-  font-family: CircularAir, "Helvetica Neue", Helvetica, sans-serif;
+  font-family: CircularAir, 'Helvetica Neue', Helvetica, sans-serif;
 `;
 
 const StarImg = styled.img`

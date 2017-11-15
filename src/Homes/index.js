@@ -8,6 +8,7 @@ import {
   SectionHead,
   NoWrap,
   MdHide,
+  Buttonn,
 } from './../UI';
 import lasalentina from './lasalentina.png';
 import dreamy from './dreamy.png';
@@ -21,6 +22,7 @@ export default () => (
       <SeeAll>See all</SeeAll>
     </SectionHead>
     <Row>
+      <Buttonn />
       <NoWrap>
         <MdHide>
           <NextPage />
