@@ -1,6 +1,6 @@
-import React from 'react';
-import { Row, Col } from 'react-flexbox-grid';
-import styled from 'styled-components';
+import React from "react";
+import { Row, Col } from "react-flexbox-grid";
+import styled from "styled-components";
 import {
   ParagraphRegular,
   SectionHead,
@@ -10,14 +10,15 @@ import {
   NextPage,
   Img,
   NoWrap,
-  MdHide,
-} from './../UI';
-import paris from './paris.png';
-import losangeles from './losangeles.png';
-import seoul from './seoul.png';
-import capetown from './capetown.png';
-import tokyo from './tokyo.png';
-import miami from './miami.png';
+  MdHide
+} from "./../UI";
+import Feature from "./Feature";
+import paris from "./paris.png";
+import losangeles from "./losangeles.png";
+import seoul from "./seoul.png";
+import capetown from "./capetown.png";
+import tokyo from "./tokyo.png";
+import miami from "./miami.png";
 
 const NextPageFeatured = styled(NextPage)`top: 59%;`;
 const Title = styled(ParagraphRegular)`
@@ -47,30 +48,12 @@ export default () => (
         <MdHide>
           <NextPageFeatured />
         </MdHide>
-        <Col xs={4} md={3} lg={2}>
-          <Img src={paris} />
-          <Title>Paris</Title>
-        </Col>
-        <Col xs={4} md={3} lg={2}>
-          <Img src={losangeles} />
-          <Title>Miami</Title>
-        </Col>
-        <Col xs={4} md={3} lg={2}>
-          <Img src={seoul} />
-          <Title>Tokyo</Title>
-        </Col>
-        <Col xs={4} md={3} lg={2}>
-          <Img src={capetown} />
-          <Title>Cape town</Title>
-        </Col>
-        <Col xs={4} md={3} lg={2}>
-          <Img src={tokyo} />
-          <Title>Seoul</Title>
-        </Col>
-        <Col xs={4} md={3} lg={2}>
-          <Img src={miami} />
-          <Title>Los Angeles</Title>
-        </Col>
+        <Feature img={paris} title="Paris" />
+        <Feature img={losangeles} title="Miami" />
+        <Feature img={seoul} title="Tokyo" />
+        <Feature img={capetown} title="Cape town" />
+        <Feature img={tokyo} title="Seoul" />
+        <Feature img={miami} title="Los Angeles" />
       </NoWrap>
     </Row>
   </Section>

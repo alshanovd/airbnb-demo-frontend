@@ -17,6 +17,7 @@ import chum from './chum.png';
 import hanjan from './hanjan.png';
 import primemeats from './primemeats.png';
 import seaprice from './seaprice.png';
+import Popular from './Popular';
 
 const Descr = styled(ParagraphBold)`
   font-size: 10px;
@@ -57,30 +58,30 @@ export default () => (
         <MdHide>
           <NextPage />
         </MdHide>
-        <Col lg={3} md={4} xs={6}>
-          <Img src={chum} />
-          <Descr>Speakeasy</Descr>
-          <Title>Chumley's</Title>
-          <SubTitle>About $60 per person</SubTitle>
-        </Col>
-        <Col lg={3} md={4} xs={6}>
-          <Img src={hanjan} />
-          <Descr>Korean gastropub</Descr>
-          <Title>Hanjan</Title>
-          <SubTitle>About $50 per person</SubTitle>
-        </Col>
-        <Col lg={3} md={4} xs={6}>
-          <Img src={primemeats} />
-          <Descr>German american</Descr>
-          <Title>Prime Meats</Title>
-          <SubTitle>About $55 per person</SubTitle>
-        </Col>
-        <Col lg={3} md={4} xs={6}>
-          <Img src={seaprice} />
-          <Descr>Fine seafood</Descr>
-          <Title>Seaprice</Title>
-          <SubTitle>About $70 per person</SubTitle>
-        </Col>
+        <Popular
+          img={chum}
+          descr="Speakeasy"
+          title="Chumley's"
+          subtitle="About $60 per person"
+        />
+        <Popular
+          img={hanjan}
+          descr="Korean gastropub"
+          title="Hanjan"
+          subtitle="About $50 per person"
+        />
+        <Popular
+          img={primemeats}
+          descr="German american"
+          title="Prime Meats"
+          subtitle="About $55 per person"
+        />
+        <Popular
+          img={seaprice}
+          descr="Fine seafood"
+          title="Seaprice"
+          subtitle="About $70 per person"
+        />
       </NoWrap>
     </Row>
   </Section>
