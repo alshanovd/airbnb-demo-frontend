@@ -12,7 +12,7 @@ import {
   SectionHead,
   NoWrap,
   MdHide,
-} from './../UI';
+} from './../../UI';
 import chum from './chum.png';
 import hanjan from './hanjan.png';
 import primemeats from './primemeats.png';

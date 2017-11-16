@@ -1,7 +1,14 @@
 import React from 'react';
 import { Col } from 'react-flexbox-grid';
 import styled from 'styled-components';
-import { Stars, Star, WordBold, ParagraphLight, Img, Reviews } from './../UI';
+import {
+  Stars,
+  Star,
+  WordBold,
+  ParagraphLight,
+  Img,
+  Reviews,
+} from './../../UI';
 
 const Desc = styled.p`
   font-family: CircularAirBold, 'Helvetica Neue', Helvetica, sans-serif;

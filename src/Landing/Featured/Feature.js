@@ -1,6 +1,6 @@
 import React from 'react';
 import { Col } from 'react-flexbox-grid';
-import { ParagraphRegular, Img } from './../UI';
+import { ParagraphRegular, Img } from './../../UI';
 import styled from 'styled-components';
 
 const Title = styled(ParagraphRegular)`

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Row } from 'react-flexbox-grid';
-import { H2, Section, SeeAll, NextPage, SectionHead, NoWrap } from './../UI';
+import { H2, Section, SeeAll, NextPage, SectionHead, NoWrap } from './../../UI';
 
 import salsa from './salsa.png';
 import mountian from './mountian.png';
