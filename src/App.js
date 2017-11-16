@@ -5,12 +5,13 @@ import { Grid } from "react-flexbox-grid";
 import Header from "./Header";
 import Explore from "./Explore";
 import Experiences from "./Experiences";
-import Homes from "./Homes";
+import Blocks from "./Homes/Blocks";
+import Main from "./Homes/Main";
 import Popular from "./Popular";
 import Featured from "./Featured";
 import Footer from "./Footer";
 import { BrowserRouter, Route } from "react-router-dom";
-import ButtonsBlock from "./Homes/ButtonsBlock";
+import Buttons from "./Homes/Buttons";
 
 const Wrapper = styled.div`
   @media (min-width: 976px) {
@@ -28,10 +29,11 @@ class App extends Component {
         <Wrapper>
           <Grid>
             <Route path="/" component={Header} />
-            <Route path="/homes" component={ButtonsBlock} />
+            <Route path="/homes" component={Buttons} />
+            <Route path="/homes" component={Blocks} />
             <Route exact path="/" component={Explore} />
             <Route exact path="/" component={Experiences} />
-            <Route exact path="/" component={Homes} />
+            <Route exact path="/" component={Main} />
             <Route exact path="/" component={Popular} />
             <Route exact path="/" component={Featured} />
             <Route exact path="/" component={Footer} />

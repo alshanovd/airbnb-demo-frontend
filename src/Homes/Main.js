@@ -1,5 +1,5 @@
-import React from 'react';
-import { Row } from 'react-flexbox-grid';
+import React from "react";
+import { Row } from "react-flexbox-grid";
 import {
   H2,
   Section,
@@ -7,13 +7,12 @@ import {
   NextPage,
   SectionHead,
   NoWrap,
-  MdHide,
-  Buttonn,
-} from './../UI';
-import lasalentina from './lasalentina.png';
-import dreamy from './dreamy.png';
-import bedr3 from './bedr3.png';
-import Home from './Home';
+  MdHide
+} from "./../UI";
+import lasalentina from "./lasalentina.png";
+import dreamy from "./dreamy.png";
+import bedr3 from "./bedr3.png";
+import Home from "./Home";
 
 export default () => (
   <Section>
@@ -22,7 +21,6 @@ export default () => (
       <SeeAll>See all</SeeAll>
     </SectionHead>
     <Row>
-      <Buttonn />
       <NoWrap>
         <MdHide>
           <NextPage />
