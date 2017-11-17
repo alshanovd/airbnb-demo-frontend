@@ -1,10 +1,10 @@
-import React from 'react';
-import { Row, Col } from 'react-flexbox-grid';
+import React from "react";
+import { Row, Col } from "react-flexbox-grid";
 import {
   H2,
   Section,
   SeeAll,
-  NextPage,
+  RightSwype,
   SectionHead,
   NoWrap,
   Img,
@@ -13,17 +13,19 @@ import {
   Stars,
   Star,
   Reviews,
-  MdHide,
-} from './../UI';
-import lasalentina from './lasalentina.png';
-import dreamy from './dreamy.png';
-import bedr3 from './bedr3.png';
-import Home from './Home';
-import styled from 'styled-components';
-import Header from './../Header';
-import { Wrapper } from './../App';
-import { BrowserRouter, Route } from 'react-router-dom';
-import Block from './Block';
+  MdHide
+} from "./../UI";
+import lasalentina from "./lasalentina.png";
+import dreamy from "./dreamy.png";
+import bedr3 from "./bedr3.png";
+import Home from "./Home";
+import styled from "styled-components";
+import Header from "./../Header";
+import { Wrapper } from "./../App";
+import { BrowserRouter, Route } from "react-router-dom";
+import Block from "./Block";
+import Buttons from "./Buttons";
+import { Paginator } from "./Paginator";
 
 const Houses = styled.div`margin: 24px 0;`;
 const Homie = styled(Home)`margin: 20px 0;`;
@@ -39,62 +41,68 @@ export default props => {
   return (
     <Houses>
       <Header />
-      <Col lg={8}>
-        <Blocks />
-      </Col>
+      <Buttons />
+      <Row>
+        <Col lg={8}>
+          <Row>
+            <Blocks />
+          </Row>
+          <Row>
+            <Paginator curPage={1} />
+          </Row>
+        </Col>
+      </Row>
     </Houses>
   );
 };
 
 const Blocks = props => {
-  return homes.map((data, i) => (
-    <div key={i}>
-      <Block datat={data} />
-    </div>
-  ));
+  return homes.map((data, i) => <Block key={i} descr={data} />);
 };
+
+const a = [1, 2, 3, 4, 5];
 
 const homes = [
   {
     reviews: 97,
-    href: '#',
-    title: '$82 La Salentina, see, nature & relax',
-    beds: '9 beds',
-    img: require('./lasalentina.png'),
+    href: "#",
+    title: "$82 La Salentina, see, nature & relax",
+    beds: "9 beds",
+    img: require("./lasalentina.png")
   },
   {
     reviews: 97,
-    href: '#',
-    title: '$82 La Salentina, see, nature & relax',
-    beds: '9 beds',
-    img: require('./lasalentina.png'),
+    href: "#",
+    title: "$82 La Salentina, see, nature & relax",
+    beds: "9 beds",
+    img: require("./lasalentina.png")
   },
   {
     reviews: 97,
-    href: '#',
-    title: '$82 La Salentina, see, nature & relax',
-    beds: '9 beds',
-    img: require('./lasalentina.png'),
+    href: "#",
+    title: "$82 La Salentina, see, nature & relax",
+    beds: "9 beds",
+    img: require("./lasalentina.png")
   },
   {
     reviews: 97,
-    href: '#',
-    title: '$82 La Salentina, see, nature & relax',
-    beds: '9 beds',
-    img: require('./lasalentina.png'),
+    href: "#",
+    title: "$82 La Salentina, see, nature & relax",
+    beds: "9 beds",
+    img: require("./lasalentina.png")
   },
   {
     reviews: 97,
-    href: '#',
-    title: '$82 La Salentina, see, nature & relax',
-    beds: '9 beds',
-    img: require('./lasalentina.png'),
+    href: "#",
+    title: "$82 La Salentina, see, nature & relax",
+    beds: "9 beds",
+    img: require("./lasalentina.png")
   },
   {
     reviews: 97,
-    href: '#',
-    title: '$82 La Salentina, see, nature & relax',
-    beds: '9 beds',
-    img: require('./lasalentina.png'),
-  },
+    href: "#",
+    title: "$82 La Salentina, see, nature & relax",
+    beds: "9 beds",
+    img: require("./lasalentina.png")
+  }
 ];

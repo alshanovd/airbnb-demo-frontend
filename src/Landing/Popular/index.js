@@ -1,23 +1,23 @@
-import React from 'react';
-import { Row, Col } from 'react-flexbox-grid';
-import styled from 'styled-components';
+import React from "react";
+import { Row, Col } from "react-flexbox-grid";
+import styled from "styled-components";
 import {
   ParagraphLight,
   H2,
   Section,
   SeeAll,
-  NextPage,
+  RightSwype,
   ParagraphBold,
   Img,
   SectionHead,
   NoWrap,
-  MdHide,
-} from './../../UI';
-import chum from './chum.png';
-import hanjan from './hanjan.png';
-import primemeats from './primemeats.png';
-import seaprice from './seaprice.png';
-import Popular from './Popular';
+  MdHide
+} from "./../../UI";
+import chum from "./chum.png";
+import hanjan from "./hanjan.png";
+import primemeats from "./primemeats.png";
+import seaprice from "./seaprice.png";
+import Popular from "./Popular";
 
 const Descr = styled(ParagraphBold)`
   font-size: 10px;
@@ -56,7 +56,7 @@ export default () => (
     <Row>
       <NoWrap>
         <MdHide>
-          <NextPage />
+          <RightSwype />
         </MdHide>
         <Popular
           img={chum}

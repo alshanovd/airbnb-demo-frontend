@@ -1,12 +1,12 @@
-import React from 'react';
-import { Col } from 'react-flexbox-grid';
-import styled from 'styled-components';
-import search from './search.svg';
+import React from "react";
+import { Col } from "react-flexbox-grid";
+import styled from "styled-components";
+import search from "./search.svg";
 
 const Logo = styled.img`margin-left: 5px;`;
 
 const Input = styled.input`
-  font-family: CircularAir, 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: CircularAir, "Helvetica Neue", Helvetica, sans-serif;
   line-height: 24px;
   font-size: 16px;
   color: #383838;
@@ -15,6 +15,7 @@ const Input = styled.input`
   width: 90%;
   margin: 0 10px;
   border: none;
+  padding: 5px;
 `;
 
 const Box = styled.div`

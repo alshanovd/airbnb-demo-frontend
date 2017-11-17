@@ -4,7 +4,7 @@ import {
   H2,
   Section,
   SeeAll,
-  NextPage,
+  RightSwype,
   SectionHead,
   NoWrap,
   MdHide
@@ -23,7 +23,7 @@ export default () => (
     <Row>
       <NoWrap>
         <MdHide>
-          <NextPage />
+          <RightSwype />
         </MdHide>
         <Home
           img={lasalentina}

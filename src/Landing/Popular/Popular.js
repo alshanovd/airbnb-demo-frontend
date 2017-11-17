@@ -1,22 +1,22 @@
-import React from 'react';
-import { Row, Col } from 'react-flexbox-grid';
-import styled from 'styled-components';
+import React from "react";
+import { Row, Col } from "react-flexbox-grid";
+import styled from "styled-components";
 import {
   ParagraphLight,
   H2,
   Section,
   SeeAll,
-  NextPage,
+  RightSwype,
   ParagraphBold,
   Img,
   SectionHead,
   NoWrap,
-  MdHide,
-} from './../../UI';
-import chum from './chum.png';
-import hanjan from './hanjan.png';
-import primemeats from './primemeats.png';
-import seaprice from './seaprice.png';
+  MdHide
+} from "./../../UI";
+import chum from "./chum.png";
+import hanjan from "./hanjan.png";
+import primemeats from "./primemeats.png";
+import seaprice from "./seaprice.png";
 
 const Descr = styled(ParagraphBold)`
   font-size: 10px;

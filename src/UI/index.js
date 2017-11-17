@@ -48,7 +48,7 @@ export const SeeAll = styled.a`
   }
 `;
 
-export const NextPage = styled.button`
+export const RightSwype = styled.button`
   background: #ffffff;
   background-image: url(${arrow});
   background-position: center center;

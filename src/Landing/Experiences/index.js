@@ -1,12 +1,19 @@
-import React from 'react';
-import { Row } from 'react-flexbox-grid';
-import { H2, Section, SeeAll, NextPage, SectionHead, NoWrap } from './../../UI';
+import React from "react";
+import { Row } from "react-flexbox-grid";
+import {
+  H2,
+  Section,
+  SeeAll,
+  RightSwype,
+  SectionHead,
+  NoWrap
+} from "./../../UI";
 
-import salsa from './salsa.png';
-import mountian from './mountian.png';
-import whale from './whale.png';
-import forest from './forest.png';
-import Experience from './Experience';
+import salsa from "./salsa.png";
+import mountian from "./mountian.png";
+import whale from "./whale.png";
+import forest from "./forest.png";
+import Experience from "./Experience";
 
 export default () => (
   <Section>
@@ -16,7 +23,7 @@ export default () => (
     </SectionHead>
     <Row>
       <NoWrap>
-        <NextPage />
+        <RightSwype />
         <Experience
           img={forest}
           price="$29"
