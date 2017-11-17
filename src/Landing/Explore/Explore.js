@@ -38,13 +38,15 @@ const Title = styled(WordBold)`
   }
 `;
 
+const LinkTo = styled(Link)`text-decoration: none;`;
+
 export default props => (
   <Col xs={6} md={5} lg={4}>
-    <Link to={`/homes`}>
+    <LinkTo to={`/homes`}>
       <Block>
         <Img src={props.img} />
         <Title>{props.title}</Title>
       </Block>
-    </Link>
+    </LinkTo>
   </Col>
 );

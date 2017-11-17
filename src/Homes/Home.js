@@ -7,6 +7,7 @@ import {
   ParagraphBold,
   Img,
   Reviews,
+  WordBold,
   Stars,
 } from './../UI';
 
@@ -16,6 +17,8 @@ const Desc = styled.div`
 `;
 
 const Beds = styled(ParagraphLight)`margin: 2px 0 0;`;
+
+const Price = styled(WordBold)`padding-right: 8px;`;
 
 export default props => {
   return (
