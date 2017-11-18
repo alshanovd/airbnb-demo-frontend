@@ -61,7 +61,7 @@ export class Buttons extends React.Component {
   constructor(props) {
     super(props);
     this.toggleRoomType = this.toggleRoomType.bind(this);
-    this.state = { roomTypeOpen: false, priceOpen: false, instantOpen: true };
+    this.state = { roomTypeOpen: false, priceOpen: false, instantOpen: false };
     this.pushFunc = props.pushFunc;
   }
 
