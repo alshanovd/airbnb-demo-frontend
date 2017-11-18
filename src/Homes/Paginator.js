@@ -69,7 +69,7 @@ const NextPage = styled(PageNum)`
   background-position: center center;
   background-repeat: no-repeat;
   :hover {
-    background: none;
+    ${'' /* TODO: fix it */} background: none;
     background-image: url(${nextpage});
     background-position: center center;
     background-repeat: no-repeat;

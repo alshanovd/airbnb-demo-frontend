@@ -114,6 +114,7 @@ export const Button = styled.button`
   font-family: CircularAir, 'Helvetica Neue', Helvetica, sans-serif;
   font-size: 14px;
   background: #ffffff;
+  cursor: pointer;
 `;
 
 export const WordBold = styled(Word)`

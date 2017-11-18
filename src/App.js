@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { Grid } from 'react-flexbox-grid';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Landing from './Landing';
-import Homes from './Homes';
+import { Homes } from './Homes/Homes';
 
 export const Wrapper = styled.div`
   @media (min-width: 976px) {

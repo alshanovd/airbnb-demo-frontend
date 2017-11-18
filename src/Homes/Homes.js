@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Row, Col } from 'react-flexbox-grid';
 import {
   H2,
@@ -15,6 +15,7 @@ import {
   Reviews,
   MdHide,
 } from './../UI';
+import { color } from './../UI/Theme';
 import lasalentina from './lasalentina.png';
 import dreamy from './dreamy.png';
 import bedr3 from './bedr3.png';
@@ -24,11 +25,20 @@ import Header from './../Header';
 import { Wrapper } from './../App';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Block from './Block';
-import Buttons from './Buttons';
+import { Buttons } from './Buttons';
 import { Paginator } from './Paginator';
 import GoogleMapReact from 'google-map-react';
 
-const Houses = styled.div`margin-bottom: 25px;`;
+const Houses = styled.div`
+  background-color: #ffffff;
+  margin-bottom: 25px;
+  ${props =>
+    props.roomTypeOpen &&
+    `
+      background: ${color.fill.primary};
+      color: #ffffff;
+    `};
+`;
 const Homie = styled(Home)`margin: 20px 0;`;
 const Container = styled.div`display: flex;`;
 const Desc = styled.div`
@@ -44,7 +54,7 @@ const coords = {
 };
 
 const Fixed = styled.div`
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
 `;
@@ -55,34 +65,73 @@ const MapContainer = styled.div`
   height: 100%;
 `;
 
-export default props => {
-  return (
-    <Houses>
-      <Header />
-      <Buttons />
-      <Row>
-        <Col md={8}>
+const Content = styled.div`
+  position: relative;
+  margin-top: 56px;
+  ${props =>
+    !props.isOpacity &&
+    `
+      opacity: 0.5;
+    `};
+`;
+
+const ButtonsBlock = styled.div`
+  display: fixed;
+  margin-top: 80px;
+  width: 100%;
+`;
+
+export class Homes extends Component {
+  state = { isOpacity: true };
+  isOpacity = true;
+  constructor(props) {
+    super(props);
+    this.togglePush = this.togglePush.bind(this);
+  }
+
+  togglePush = pushed => {
+    this.setState({
+      isOpacity: pushed,
+    });
+  };
+
+  render() {
+    return (
+      <Houses>
+        <Header />
+        <Row>
+          <Col md={12}>
+            <ButtonsBlock>
+              <Buttons pushFunc={this.togglePush} />
+            </ButtonsBlock>
+          </Col>
+        </Row>
+        <Content isOpacity={this.state.isOpacity}>
           <Row>
-            <Blocks />
+            <Col md={8}>
+              <Row>
+                <Blocks />
+              </Row>
+              <Row>
+                <Paginator curPage={1} />
+              </Row>
+            </Col>
+            <Col md={4}>
+              <MapContainer>
+                <Fixed>
+                  <GoogleMapReact
+                    defaultCenter={coords.center}
+                    defaultZoom={coords.zoom}
+                  />
+                </Fixed>
+              </MapContainer>
+            </Col>
           </Row>
-          <Row>
-            <Paginator curPage={1} />
-          </Row>
-        </Col>
-        <Col md={4}>
-          <MapContainer>
-            <Fixed>
-              <GoogleMapReact
-                defaultCenter={coords.center}
-                defaultZoom={coords.zoom}
-              />
-            </Fixed>
-          </MapContainer>
-        </Col>
-      </Row>
-    </Houses>
-  );
-};
+        </Content>
+      </Houses>
+    );
+  }
+}
 
 const Blocks = props => {
   return homes.map((data, i) => <Block key={i} descr={data} />);

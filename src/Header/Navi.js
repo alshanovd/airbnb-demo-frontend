@@ -15,7 +15,7 @@ const Point = styled.a`
 `;
 
 export default () => (
-  <Col lgOffset={2} lg={4}>
+  <Col md={4}>
     <MdHide>
       <Point href="#">Become a host</Point>
       <Point href="#">Help</Point>
