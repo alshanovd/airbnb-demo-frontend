@@ -161,6 +161,10 @@ export const AncorRegular = styled(Ancor)`
   font-family: CircularAir, 'Helvetica Neue', Helvetica, sans-serif;
 `;
 
+export const AncorLight = styled(Ancor)`
+  font-family: CircularAirLight, 'Helvetica Neue', Helvetica, sans-serif;
+`;
+
 const StarImg = styled.img`
   margin-right: 3px;
   height: 12px;

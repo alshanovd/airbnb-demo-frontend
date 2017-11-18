@@ -1,7 +1,15 @@
 import React, { Component } from 'react';
-import { Row } from 'react-flexbox-grid';
+import { Row, Col } from 'react-flexbox-grid';
 import styled from 'styled-components';
-import { Button, WordLight, ParagraphLight, ParagraphRegular } from './../UI';
+import {
+  Button,
+  Ancor,
+  WordLight,
+  ParagraphLight,
+  AncorLight,
+  ParagraphRegular,
+  ParagraphBold,
+} from './../UI';
 import { color } from './../UI/Theme';
 import entire from './entire.svg';
 import armchair from './armchair.svg';
@@ -11,6 +19,11 @@ import 'rheostat/css/slider.css';
 import pricing from './pricing.svg';
 import './rheostatCustom.css';
 import bookToggle from './bookToggle.svg';
+import DayPicker from 'react-day-picker';
+import 'react-day-picker/lib/style.css';
+import minus from './guestMinus.svg';
+import plus from './guestPlus.svg';
+import 'react-day-picker/lib/style.css';
 
 const Container = styled.div`
   box-shadow: 0px 0.5px 0px rgba(72, 72, 72, 0.3);
@@ -50,20 +63,82 @@ const Btn = styled(Button)`
     `};
 `;
 
+const GuestsRow = styled.div`
+  margin-bottom: 20px;
+  display: flex;
+  width: 100%;
+  align-items: center;
+`;
+
 const BtnContainer = styled.div`position: relative;`;
+
 const Fixed = styled.div`
   position: fixed;
   width: 100%;
   z-index: 10;
 `;
 
+const Number = styled(WordLight)``;
+
+const Minus = styled.img``;
+
+const MinusPlus = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 110px;
+`;
+
+const Plus = styled.img``;
+
+const GuestsBlock = styled.div`
+  top: 53px;
+  background: #ffffff;
+  border: 1px solid rgba(72, 72, 72, 0.2);
+  box-sizing: border-box;
+  box-shadow: 0px 2px 4px rgba(72, 72, 72, 0.08);
+  border-radius: 4px;
+  position: absolute;
+  align-items: center;
+  padding: 20px 30px;
+  width: 300px;
+  display: none;
+  flex-direction: column;
+  ${props =>
+    props.show &&
+    `
+      display: flex;
+    `};
+`;
+
+const GuestDescr = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+`;
+
 export class Buttons extends React.Component {
   constructor(props) {
     super(props);
     this.toggleRoomType = this.toggleRoomType.bind(this);
-    this.state = { roomTypeOpen: false, priceOpen: false, instantOpen: false };
+    this.state = {
+      roomTypeOpen: false,
+      priceOpen: false,
+      instantOpen: false,
+      datesOpen: false,
+      guestsOpen: false,
+      moreOpen: true,
+    };
     this.pushFunc = props.pushFunc;
   }
+
+  toggleGuests = () => {
+    if (!this.state.guestsOpen) this.buttonsOff();
+    this.setState(prevState => ({
+      guestsOpen: !prevState.guestsOpen,
+    }));
+    this.pushFunc(this.state.guestsOpen);
+  };
 
   toggleRoomType = () => {
     if (!this.state.roomTypeOpen) this.buttonsOff();
@@ -89,11 +164,30 @@ export class Buttons extends React.Component {
     this.pushFunc(this.state.instantOpen);
   };
 
+  toggleDates = () => {
+    if (!this.state.datesOpen) this.buttonsOff();
+    this.setState(prevState => ({
+      datesOpen: !prevState.datesOpen,
+    }));
+    this.pushFunc(this.state.datesOpen);
+  };
+
+  toggleMoreFilters = () => {
+    if (!this.state.moreOpen) this.buttonsOff();
+    this.setState(prevState => ({
+      moreOpen: !prevState.moreOpen,
+    }));
+    this.pushFunc(this.state.moreOpen);
+  };
+
   buttonsOff() {
     this.setState({
       roomTypeOpen: false,
       priceOpen: false,
       instantOpen: false,
+      datesOpen: false,
+      guestsOpen: false,
+      moreOpen: false,
     });
   }
 
@@ -102,8 +196,64 @@ export class Buttons extends React.Component {
       <Row>
         <Fixed>
           <Container>
-            <Btn>Dates</Btn>
-            <Btn>Guests</Btn>
+            <BtnContainer>
+              <Btn onClick={this.toggleDates} pushed={this.state.datesOpen}>
+                {this.state.datesOpen && <span>Check in — Check out</span>}
+                {!this.state.datesOpen && <span>Dates</span>}
+              </Btn>
+              <DatesBlock show={this.state.datesOpen}>
+                <DayPickerBlock>
+                  <DayPicker numberOfMonths={2} fixedWeeks />
+                </DayPickerBlock>
+                <RoomTypeButtonsBlock>
+                  <Cancel>Cancel</Cancel>
+                  <Apply>Apply</Apply>
+                </RoomTypeButtonsBlock>
+              </DatesBlock>
+            </BtnContainer>
+            <BtnContainer>
+              <Btn onClick={this.toggleGuests} pushed={this.state.guestsOpen}>
+                Guests
+              </Btn>
+              <GuestsBlock show={this.state.guestsOpen}>
+                <GuestsRow>
+                  <GuestDescr>
+                    <ParagraphRegular>Adults</ParagraphRegular>
+                  </GuestDescr>
+                  <MinusPlus>
+                    <Minus src={minus} />
+                    <Number>0</Number>
+                    <Plus src={plus} />
+                  </MinusPlus>
+                </GuestsRow>
+                <GuestsRow>
+                  <GuestDescr>
+                    <DescrP>Children</DescrP>
+                    <ParagraphLight>Ages 2 - 12</ParagraphLight>
+                  </GuestDescr>
+                  <MinusPlus>
+                    <Minus src={minus} />
+                    <Number>0</Number>
+                    <Plus src={plus} />
+                  </MinusPlus>
+                </GuestsRow>
+                <GuestsRow>
+                  <GuestDescr>
+                    <DescrP>Infants</DescrP>
+                    <ParagraphLight>Under 2</ParagraphLight>
+                  </GuestDescr>
+                  <MinusPlus>
+                    <Minus src={minus} />
+                    <Number>0</Number>
+                    <Plus src={plus} />
+                  </MinusPlus>
+                </GuestsRow>
+                <RoomTypeButtonsBlock>
+                  <Cancel>Cancel</Cancel>
+                  <Apply>Apply</Apply>
+                </RoomTypeButtonsBlock>
+              </GuestsBlock>
+            </BtnContainer>
             <BtnContainer>
               <Btn
                 onClick={this.toggleRoomType}
@@ -125,13 +275,71 @@ export class Buttons extends React.Component {
               </Btn>
               <InstantBook show={this.state.instantOpen} />
             </BtnContainer>
-            <Btn>More filters</Btn>
+            <BtnContainer>
+              <Btn
+                onClick={this.toggleMoreFilters}
+                pushed={this.state.moreOpen}
+              >
+                More filters
+              </Btn>
+              <MoreFilters show={this.state.moreOpen} />
+            </BtnContainer>
           </Container>
         </Fixed>
       </Row>
     );
   }
 }
+
+const MoreOptions = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const DescrP = styled(ParagraphRegular)`margin-bottom: 5px;`;
+
+const DayPickerBlock = styled.div`
+  display: flex;
+  width: 536px;
+`;
+
+const MoreFiltersSection = styled.div`
+  border-bottom: 1px solid rgba(72, 72, 72, 0.3);
+`;
+
+const MoreFiltersBlock = styled.div`
+  position: absolute;
+  flex-direction: column;
+  width: 658px;
+  height: 1124px;
+  top: 53px;
+  left: -488px;
+  background: #ffffff;
+  display: none;
+  ${props =>
+    props.show &&
+    `
+      display: flex;
+    `};
+`;
+
+const DatesBlock = styled.div`
+  top: 53px;
+  display: none;
+  position: absolute;
+  background: #ffffff;
+  border: 1px solid rgba(72, 72, 72, 0.2);
+  box-sizing: border-box;
+  box-shadow: 0px 2px 4px rgba(72, 72, 72, 0.08);
+  border-radius: 4px;
+  padding: 16px;
+  flex-direction: column;
+  ${props =>
+    props.show &&
+    `
+      display: flex;
+    `};
+`;
 
 const PriceBlock = styled.div`
   padding: 24px 16px;
@@ -157,7 +365,8 @@ const PriceTitle = styled(ParagraphLight)`font-size: 16px;`;
 
 const SubTitle = styled(ParagraphLight)`
   font-size: 12px;
-  margin-top: 8px;
+  margin-top: 15px;
+  margin-botton: 15px;
 `;
 
 const Check = styled.input`display: none;`;
@@ -193,6 +402,170 @@ const Checkbox = styled.div`
 `;
 
 const RheostatBlock = styled.div`margin: 30px 15px;`;
+
+const MoreFilterLabel = styled(ParagraphLight)`width: 240px;`;
+
+function MoreFilters(props) {
+  return (
+    <MoreFiltersBlock show={props.show}>
+      <MoreFiltersSection>
+        <MoreFilterTitle>Rooms and beds</MoreFilterTitle>
+        <MoreFilterRow>
+          <MoreFilterLabel>Bedrooms</MoreFilterLabel>
+          <MinusPlus>
+            <Minus src={minus} />
+            <Number>0+</Number>
+            <Plus src={plus} />
+          </MinusPlus>
+        </MoreFilterRow>
+        <MoreFilterRow>
+          <MoreFilterLabel>Beds</MoreFilterLabel>
+          <MinusPlus>
+            <Minus src={minus} />
+            <Number>0+</Number>
+            <Plus src={plus} />
+          </MinusPlus>
+        </MoreFilterRow>
+        <MoreFilterRow>
+          <MoreFilterLabel>Bathrooms</MoreFilterLabel>
+          <MinusPlus>
+            <Minus src={minus} />
+            <Number>0+</Number>
+            <Plus src={plus} />
+          </MinusPlus>
+        </MoreFilterRow>
+      </MoreFiltersSection>
+      <MoreFiltersSection>
+        <MoreFilterRow>
+          <MoreFilterLabel>
+            <MoreFilterTitle>More options</MoreFilterTitle>
+            <ParagraphLight>Superhost</ParagraphLight>
+            <ParagraphLight>Stay with recognized hosts.</ParagraphLight>
+            <AncorLight>Learn More</AncorLight>
+          </MoreFilterLabel>
+          <MoreFilterToggle>
+            <ToggleBook src={bookToggle} />
+          </MoreFilterToggle>
+        </MoreFilterRow>
+      </MoreFiltersSection>
+      <MoreFiltersSection>
+        <MoreFilterRow>
+          <MoreFilterAmenities>
+            <MoreFilterTitle>Amenities</MoreFilterTitle>
+            <Row>
+              <Col md={6}>
+                <CheckBlock>
+                  <Check id="ch1" type="checkbox" />
+                  <Checkbox />
+                  <CheckDescr>
+                    <Label for="ch1">
+                      <WordLight>Heating</WordLight>
+                    </Label>
+                  </CheckDescr>
+                </CheckBlock>
+                <CheckBlock>
+                  <Check id="ch1" type="checkbox" />
+                  <Checkbox />
+                  <CheckDescr>
+                    <Label for="ch1">
+                      <WordLight>Heating</WordLight>
+                    </Label>
+                  </CheckDescr>
+                </CheckBlock>
+              </Col>
+              <Col md={6}>
+                <CheckBlock>
+                  <Check id="ch1" type="checkbox" />
+                  <Checkbox />
+                  <CheckDescr>
+                    <Label for="ch1">
+                      <WordLight>Heating</WordLight>
+                    </Label>
+                  </CheckDescr>
+                </CheckBlock>
+                <CheckBlock>
+                  <Check id="ch1" type="checkbox" />
+                  <Checkbox />
+                  <CheckDescr>
+                    <Label for="ch1">
+                      <WordLight>Heating</WordLight>
+                    </Label>
+                  </CheckDescr>
+                </CheckBlock>
+              </Col>
+            </Row>
+            <SeeAllAmen>See all amenities</SeeAllAmen>
+          </MoreFilterAmenities>
+        </MoreFilterRow>
+      </MoreFiltersSection>
+      <MoreFiltersSection>
+        <MoreFilterRow>
+          <MoreFilterAmenities>
+            <MoreFilterTitle>Facilities</MoreFilterTitle>
+            <Row>
+              <Col md={6}>
+                <CheckBlock>
+                  <Check id="ch1" type="checkbox" />
+                  <Checkbox />
+                  <CheckDescr>
+                    <Label for="ch1">
+                      <WordLight>Heating</WordLight>
+                    </Label>
+                  </CheckDescr>
+                </CheckBlock>
+                <CheckBlock>
+                  <Check id="ch1" type="checkbox" />
+                  <Checkbox />
+                  <CheckDescr>
+                    <Label for="ch1">
+                      <WordLight>Heating</WordLight>
+                    </Label>
+                  </CheckDescr>
+                </CheckBlock>
+              </Col>
+              <Col md={6}>
+                <CheckBlock>
+                  <Check id="ch1" type="checkbox" />
+                  <Checkbox />
+                  <CheckDescr>
+                    <Label for="ch1">
+                      <WordLight>Heating</WordLight>
+                    </Label>
+                  </CheckDescr>
+                </CheckBlock>
+                <CheckBlock>
+                  <Check id="ch1" type="checkbox" />
+                  <Checkbox />
+                  <CheckDescr>
+                    <Label for="ch1">
+                      <WordLight>Heating</WordLight>
+                    </Label>
+                  </CheckDescr>
+                </CheckBlock>
+              </Col>
+            </Row>
+            <SeeAllAmen>See all amenities</SeeAllAmen>
+          </MoreFilterAmenities>
+        </MoreFilterRow>
+      </MoreFiltersSection>
+    </MoreFiltersBlock>
+  );
+}
+
+const SeeAllAmen = styled(ParagraphBold)`color: ${color.fill.primary};`;
+
+const MoreFilterToggle = styled(MoreFilterLabel)`margin-top: 50px;`;
+
+const MoreFilterTitle = styled(ParagraphRegular)`
+  font-size: 20px;
+  margin-top: 23px;
+  margin-bottom: 25px;
+`;
+
+const MoreFilterRow = styled.div`
+  display: flex;
+  margin-bottom: 25px;
+`;
 
 function Price(props) {
   return (
@@ -244,6 +617,8 @@ function InstantBook(props) {
   );
 }
 
+const MoreFilterAmenities = styled(MoreFilterLabel)`width: 100%;`;
+
 function RoomType(props) {
   return (
     <RoomTypeBlock show={props.show}>
@@ -293,6 +668,7 @@ function RoomType(props) {
 const RoomTypeButtonsBlock = styled.div`
   display: flex;
   justify-content: space-between;
+  width: 100%;
 `;
 const RoomTypeButton = styled(Button)`
   font-size: 16px;
