@@ -127,7 +127,7 @@ export class Buttons extends React.Component {
       instantOpen: false,
       datesOpen: false,
       guestsOpen: false,
-      moreOpen: true,
+      moreOpen: false,
     };
     this.pushFunc = props.pushFunc;
   }
