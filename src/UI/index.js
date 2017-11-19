@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
-import seeall from './seeall.svg';
+import seeAll from './seeAll.svg';
 import arrow from './arrow.png';
 import star from './star.png';
 import './font.css';
@@ -41,14 +41,14 @@ export const SeeAll = styled.a`
   white-space: nowrap;
   &:after {
     padding: 8px;
-    content: url(${seeall});
+    content: url(${seeAll});
   }
   :hover {
     text-decoration: underline;
   }
 `;
 
-export const NextPage = styled.button`
+export const RightSwype = styled.button`
   background: #ffffff;
   background-image: url(${arrow});
   background-position: center center;
@@ -73,9 +73,48 @@ const Word = styled.span`
   font-size: 13px;
   line-height: 18px;
   color: #383838;
+  font-family: CircularAir, 'Helvetica Neue', Helvetica, sans-serif;
   @media (min-width: 321px) {
     font-size: 15px;
   }
+`;
+
+export class Buttonn extends React.Component {
+  state = { isPushed: false };
+
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    this.setState({
+      isPushed: true,
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <button onClick={this.handleClick}>baton</button>
+        {this.state.isPushed && (
+          <img src="http://forum.cxem.net/uploads/photos/monthly_2017_08/5991d7f54af3e_.png.0a4d9d92c8c7e3b6af92c868cf5a66a5.png" />
+        )}
+      </div>
+    );
+  }
+}
+
+export const Button = styled.button`
+  padding: 7px 16px;
+  margin: 12px 12px 12px 0;
+  border: 1px solid rgba(72, 72, 72, 0.2);
+  box-sizing: border-box;
+  border-radius: 4px;
+  font-family: CircularAir, 'Helvetica Neue', Helvetica, sans-serif;
+  font-size: 14px;
+  background: #ffffff;
+  cursor: pointer;
 `;
 
 export const WordBold = styled(Word)`
@@ -122,6 +161,10 @@ export const AncorRegular = styled(Ancor)`
   font-family: CircularAir, 'Helvetica Neue', Helvetica, sans-serif;
 `;
 
+export const AncorLight = styled(Ancor)`
+  font-family: CircularAirLight, 'Helvetica Neue', Helvetica, sans-serif;
+`;
+
 const StarImg = styled.img`
   margin-right: 3px;
   height: 12px;
@@ -157,7 +200,7 @@ export const NoWrap = styled.div`
 
 export const MdHide = styled.div`
   display: none;
-  @media (min-width: 768px) {
+  @media (min-width: 769px) {
     display: block;
   }
 `;

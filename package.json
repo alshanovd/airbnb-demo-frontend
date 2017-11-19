@@ -4,11 +4,15 @@
   "private": true,
   "dependencies": {
     "flexboxgrid2": "^7.0.0-alpha12",
+    "google-map-react": "^0.25.0",
     "normalize.css": "^7.0.0",
     "react": "^16.0.0",
+    "react-day-picker": "^6.2.1",
     "react-dom": "^16.0.0",
     "react-flexbox-grid": "^2.0.0",
+    "react-router-dom": "^4.2.2",
     "react-scripts": "1.0.17",
+    "rheostat": "^2.1.1",
     "styled-components": "^2.2.3"
   },
   "scripts": {
@@ -16,5 +20,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "env": {
+    "NODE_ENV": "production"
   }
 }

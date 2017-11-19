@@ -2,15 +2,11 @@ import React, { Component } from 'react';
 import 'normalize.css';
 import styled from 'styled-components';
 import { Grid } from 'react-flexbox-grid';
-import Header from './Header';
-import Explore from './Explore';
-import Experiences from './Experiences';
-import Homes from './Homes';
-import Popular from './Popular';
-import Featured from './Featured';
-import Footer from './Footer';
+import { BrowserRouter, Route } from 'react-router-dom';
+import Landing from './Landing';
+import { Homes } from './Homes/Homes';
 
-const Wrapper = styled.div`
+export const Wrapper = styled.div`
   @media (min-width: 976px) {
     max-width: 976px;
     margin-right: auto;
@@ -22,17 +18,14 @@ const Wrapper = styled.div`
 class App extends Component {
   render() {
     return (
-      <Wrapper>
-        <Grid>
-          <Header />
-          <Explore />
-          <Experiences />
-          <Homes />
-          <Popular />
-          <Featured />
-          <Footer />
-        </Grid>
-      </Wrapper>
+      <BrowserRouter>
+        <Wrapper>
+          <Grid>
+            <Route exact path="/" component={Landing} />
+            <Route exact path="/homes" component={Homes} />
+          </Grid>
+        </Wrapper>
+      </BrowserRouter>
     );
   }
 }
