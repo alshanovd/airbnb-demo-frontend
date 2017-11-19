@@ -71,7 +71,16 @@ const GuestsRow = styled.div`
   align-items: center;
 `;
 
-const BtnContainer = styled.div`position: relative;`;
+const BtnContainer = styled.div`
+  position: relative;
+  display: none;
+`;
+
+const BtnContainerShow = styled(BtnContainer)`
+  @media (min-width: 768px) {
+    display: block;
+  }
+`;
 
 const Fixed = styled.div`
   position: fixed;
@@ -211,92 +220,104 @@ export class Buttons extends React.Component {
 
   render() {
     return (
-        <Container>
-          <BtnContainer>
-            <Btn onClick={this.toggleDates} pushed={this.state.datesOpen}>
-              {this.state.datesOpen && <span>Check in — Check out</span>}
-              {!this.state.datesOpen && <span>Dates</span>}
-            </Btn>
-            <DatesBlock show={this.state.datesOpen}>
-              <DayPickerBlock>
-                <DayPicker numberOfMonths={2} fixedWeeks />
-              </DayPickerBlock>
-              <RoomTypeButtonsBlock>
-                <Cancel>Cancel</Cancel>
-                <Apply>Apply</Apply>
-              </RoomTypeButtonsBlock>
-            </DatesBlock>
-          </BtnContainer>
-          <BtnContainer>
-            <Btn onClick={this.toggleGuests} pushed={this.state.guestsOpen}>
-              Guests
-            </Btn>
-            <GuestsBlock show={this.state.guestsOpen}>
-              <GuestsRow>
-                <GuestDescr>
-                  <ParagraphRegular>Adults</ParagraphRegular>
-                </GuestDescr>
-                <MinusPlus>
-                  <Minus src={minus} />
-                  <Number>0</Number>
-                  <Plus src={plus} />
-                </MinusPlus>
-              </GuestsRow>
-              <GuestsRow>
-                <GuestDescr>
-                  <DescrP>Children</DescrP>
-                  <ParagraphLight>Ages 2 - 12</ParagraphLight>
-                </GuestDescr>
-                <MinusPlus>
-                  <Minus src={minus} />
-                  <Number>0</Number>
-                  <Plus src={plus} />
-                </MinusPlus>
-              </GuestsRow>
-              <GuestsRow>
-                <GuestDescr>
-                  <DescrP>Infants</DescrP>
-                  <ParagraphLight>Under 2</ParagraphLight>
-                </GuestDescr>
-                <MinusPlus>
-                  <Minus src={minus} />
-                  <Number>0</Number>
-                  <Plus src={plus} />
-                </MinusPlus>
-              </GuestsRow>
-              <RoomTypeButtonsBlock>
-                <Cancel>Cancel</Cancel>
-                <Apply>Apply</Apply>
-              </RoomTypeButtonsBlock>
-            </GuestsBlock>
-          </BtnContainer>
-          <BtnContainer>
-            <Btn onClick={this.toggleRoomType} pushed={this.state.roomTypeOpen}>
-              Room type
-            </Btn>
-            <RoomType show={this.state.roomTypeOpen} />
-          </BtnContainer>
-          <BtnContainer>
-            <Btn onClick={this.togglePrice} pushed={this.state.priceOpen}>
-              Price
-            </Btn>
-            <Price show={this.state.priceOpen} />
-          </BtnContainer>
-          <BtnContainer>
-            <Btn onClick={this.toggleInstant} pushed={this.state.instantOpen}>
-              Instant book
-            </Btn>
-            <InstantBook show={this.state.instantOpen} />
-          </BtnContainer>
-          <BtnContainer>
-            <Btn onClick={this.toggleMoreFilters} pushed={this.state.moreOpen}>
-              More filters
-            </Btn>
-            <MoreFilters show={this.state.moreOpen} />
-          </BtnContainer>
-        </Container>
+      <Container>
+        <BtnContainerShow>
+          <Btn onClick={this.toggleDates} pushed={this.state.datesOpen}>
+            {this.state.datesOpen && <span>Check in — Check out</span>}
+            {!this.state.datesOpen && <span>Dates</span>}
+          </Btn>
+          <DatesBlock show={this.state.datesOpen}>
+            <DayPickerBlock>
+              <DayPicker numberOfMonths={2} fixedWeeks />
+            </DayPickerBlock>
+            <RoomTypeButtonsBlock>
+              <Cancel>Cancel</Cancel>
+              <Apply>Apply</Apply>
+            </RoomTypeButtonsBlock>
+          </DatesBlock>
+        </BtnContainerShow>
+        <BtnContainerShow>
+          <Btn onClick={this.toggleGuests} pushed={this.state.guestsOpen}>
+            Guests
+          </Btn>
+          <GuestsBlockFunc show={this.state.guestsOpen} />
+        </BtnContainerShow>
+        <BtnContainerTablet>
+          <Btn onClick={this.toggleRoomType} pushed={this.state.roomTypeOpen}>
+            Room type
+          </Btn>
+          <RoomType show={this.state.roomTypeOpen} />
+        </BtnContainerTablet>
+        <BtnContainerTablet>
+          <Btn onClick={this.togglePrice} pushed={this.state.priceOpen}>
+            Price
+          </Btn>
+          <Price show={this.state.priceOpen} />
+        </BtnContainerTablet>
+        <BtnContainerTablet>
+          <Btn onClick={this.toggleInstant} pushed={this.state.instantOpen}>
+            Instant book
+          </Btn>
+          <InstantBook show={this.state.instantOpen} />
+        </BtnContainerTablet>
+        <BtnContainerShow>
+          <Btn onClick={this.toggleMoreFilters} pushed={this.state.moreOpen}>
+            More filters
+          </Btn>
+          <MoreFilters show={this.state.moreOpen} />
+        </BtnContainerShow>
+      </Container>
     );
   }
+}
+
+const BtnContainerTablet = styled(BtnContainer)`
+  @media (min-width: 1000px) {
+    display: block;
+  }
+`;
+
+function GuestsBlockFunc(props) {
+  return (
+    <GuestsBlock show={props.show}>
+      <GuestsRow>
+        <GuestDescr>
+          <ParagraphRegular>Adults</ParagraphRegular>
+        </GuestDescr>
+        <MinusPlus>
+          <Minus src={minus} />
+          <Number>0</Number>
+          <Plus src={plus} />
+        </MinusPlus>
+      </GuestsRow>
+      <GuestsRow>
+        <GuestDescr>
+          <DescrP>Children</DescrP>
+          <ParagraphLight>Ages 2 - 12</ParagraphLight>
+        </GuestDescr>
+        <MinusPlus>
+          <Minus src={minus} />
+          <Number>0</Number>
+          <Plus src={plus} />
+        </MinusPlus>
+      </GuestsRow>
+      <GuestsRow>
+        <GuestDescr>
+          <DescrP>Infants</DescrP>
+          <ParagraphLight>Under 2</ParagraphLight>
+        </GuestDescr>
+        <MinusPlus>
+          <Minus src={minus} />
+          <Number>0</Number>
+          <Plus src={plus} />
+        </MinusPlus>
+      </GuestsRow>
+      <RoomTypeButtonsBlock>
+        <Cancel>Cancel</Cancel>
+        <Apply>Apply</Apply>
+      </RoomTypeButtonsBlock>
+    </GuestsBlock>
+  );
 }
 
 const MoreOptions = styled.div`
@@ -411,7 +432,7 @@ const Checkbox = styled.div`
 
 const RheostatBlock = styled.div`margin: 30px 15px;`;
 
-const MoreFilterLabel = styled(ParagraphLight)`width: 240px;`;
+const MoreFilterLabel = styled.div`display: block; width: 240px;`;
 
 function MoreFilters(props) {
   return (

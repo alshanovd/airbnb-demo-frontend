@@ -55,7 +55,7 @@ const coords = {
 };
 
 const Fixed = styled.div`
-margin-top: 30px;
+  margin-top: 30px;
   position: fixed;
   width: 100%;
   height: 100%;
@@ -65,6 +65,9 @@ const MapContainer = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
+  @media (min-width: 768px) {
+    display: none;
+  }
 `;
 
 const Content = styled.div`
@@ -108,7 +111,7 @@ export class Homes extends Component {
         <Houses>
           <Content isOpacity={this.state.isOpacity}>
             <Row>
-              <Col md={8}>
+              <Col md={12} lg={8}>
                 <Row>
                   <Blocks />
                 </Row>
@@ -116,16 +119,18 @@ export class Homes extends Component {
                   <Paginator curPage={1} />
                 </Row>
               </Col>
-              <Col md={4}>
-                <MapContainer>
-                  <Fixed>
-                    <GoogleMapReact
-                      defaultCenter={coords.center}
-                      defaultZoom={coords.zoom}
-                    />
-                  </Fixed>
-                </MapContainer>
-              </Col>
+              <MdHide>
+                <Col lg={4}>
+                  <MapContainer>
+                    <Fixed>
+                      <GoogleMapReact
+                        defaultCenter={coords.center}
+                        defaultZoom={coords.zoom}
+                      />
+                    </Fixed>
+                  </MapContainer>
+                </Col>
+              </MdHide>
             </Row>
           </Content>
         </Houses>

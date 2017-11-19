@@ -200,7 +200,7 @@ export const NoWrap = styled.div`
 
 export const MdHide = styled.div`
   display: none;
-  @media (min-width: 768px) {
+  @media (min-width: 769px) {
     display: block;
   }
 `;
