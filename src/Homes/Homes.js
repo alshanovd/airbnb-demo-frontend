@@ -55,6 +55,7 @@ const coords = {
 };
 
 const Fixed = styled.div`
+margin-top: 30px;
   position: fixed;
   width: 100%;
   height: 100%;
