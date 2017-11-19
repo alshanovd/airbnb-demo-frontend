@@ -32,6 +32,7 @@ import GoogleMapReact from 'google-map-react';
 const Houses = styled.div`
   background-color: #ffffff;
   margin-bottom: 25px;
+  margin-top: 55px;
   ${props =>
     props.roomTypeOpen &&
     `
@@ -66,8 +67,7 @@ const MapContainer = styled.div`
 `;
 
 const Content = styled.div`
-  position: relative;
-  margin-top: 56px;
+  ${'' /* margin-top: 100px; */} position: relative;
   ${props =>
     !props.isOpacity &&
     `
@@ -76,9 +76,11 @@ const Content = styled.div`
 `;
 
 const ButtonsBlock = styled.div`
-  display: fixed;
-  margin-top: 80px;
+  margin-top: 24px;
   width: 100%;
+  position: fixed;
+  background-color: #ffffff;
+  z-index: 1;
 `;
 
 export class Homes extends Component {
@@ -97,44 +99,46 @@ export class Homes extends Component {
 
   render() {
     return (
-      <Houses>
+      <div>
         <Header />
-        <Row>
-          <Col md={12}>
-            <ButtonsBlock>
-              <Buttons pushFunc={this.togglePush} />
-            </ButtonsBlock>
-          </Col>
-        </Row>
-        <Content isOpacity={this.state.isOpacity}>
-          <Row>
-            <Col md={8}>
-              <Row>
-                <Blocks />
-              </Row>
-              <Row>
-                <Paginator curPage={1} />
-              </Row>
-            </Col>
-            <Col md={4}>
-              <MapContainer>
-                <Fixed>
-                  <GoogleMapReact
-                    defaultCenter={coords.center}
-                    defaultZoom={coords.zoom}
-                  />
-                </Fixed>
-              </MapContainer>
-            </Col>
-          </Row>
-        </Content>
-      </Houses>
+        <ButtonsBlock>
+          <Buttons pushFunc={this.togglePush} />
+        </ButtonsBlock>
+        <Houses>
+          <Content isOpacity={this.state.isOpacity}>
+            <Row>
+              <Col md={8}>
+                <Row>
+                  <Blocks />
+                </Row>
+                <Row>
+                  <Paginator curPage={1} />
+                </Row>
+              </Col>
+              <Col md={4}>
+                <MapContainer>
+                  <Fixed>
+                    <GoogleMapReact
+                      defaultCenter={coords.center}
+                      defaultZoom={coords.zoom}
+                    />
+                  </Fixed>
+                </MapContainer>
+              </Col>
+            </Row>
+          </Content>
+        </Houses>
+      </div>
     );
   }
 }
 
 const Blocks = props => {
-  return homes.map((data, i) => <Block key={i} descr={data} />);
+  return homes.map((data, i) => (
+    <Col md={6}>
+      <Block key={i} descr={data} />
+    </Col>
+  ));
 };
 
 const homes = [

@@ -46,25 +46,23 @@ const Price = styled(WordBold)`padding-right: 8px;`;
 export default props => {
   const descr = props.descr;
   return (
-    <Col md={6}>
-      <Block to="#">
-        <Img src={descr.img} />
-        <Desc>
-          <ParagraphBold>
-            <Price>${descr.price}</Price>
-            {descr.title}
-          </ParagraphBold>
-          <Beds>Entire house · {descr.beds}</Beds>
-          <Stars>
-            <Star />
-            <Star />
-            <Star />
-            <Star />
-            <Star />
-            <Reviews>{descr.reviews} · Superhost</Reviews>
-          </Stars>
-        </Desc>
-      </Block>
-    </Col>
+    <Block to="#">
+      <Img src={descr.img} />
+      <Desc>
+        <ParagraphBold>
+          <Price>${descr.price}</Price>
+          {descr.title}
+        </ParagraphBold>
+        <Beds>Entire house · {descr.beds}</Beds>
+        <Stars>
+          <Star />
+          <Star />
+          <Star />
+          <Star />
+          <Star />
+          <Reviews>{descr.reviews} · Superhost</Reviews>
+        </Stars>
+      </Desc>
+    </Block>
   );
 };

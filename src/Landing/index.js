@@ -22,7 +22,6 @@ const Wrapper = styled.div`
 const Content = styled.div`
   position: relative;
   margin-top: 80px;
-  
 `;
 
 export default () => (

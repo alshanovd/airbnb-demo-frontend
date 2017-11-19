@@ -3,9 +3,10 @@ import { Row, Col } from 'react-flexbox-grid';
 import styled from 'styled-components';
 import {
   Button,
-  Ancor,
   WordLight,
+  WordBold,
   ParagraphLight,
+  WordRegular,
   AncorLight,
   ParagraphRegular,
   ParagraphBold,
@@ -74,7 +75,7 @@ const BtnContainer = styled.div`position: relative;`;
 
 const Fixed = styled.div`
   position: fixed;
-  width: 100%;
+  width: 976px;
   z-index: 10;
 `;
 
@@ -90,6 +91,23 @@ const MinusPlus = styled.div`
 `;
 
 const Plus = styled.img``;
+
+const MoreFiltersControls = styled.div`
+  display: flex;
+  flex-direction: row-reverse;
+`;
+
+const MoreFilterButtonSbmt = styled.button`
+  background-color: ${color.fill.primary};
+  padding: 12px 28px;
+  border-radius: 4px;
+  border: none;
+  margin: 5px 5px 0 0;
+`;
+
+const MoreFilterButtonCn = styled(MoreFilterButtonSbmt)`
+  background-color: #ffffff;
+`;
 
 const GuestsBlock = styled.div`
   top: 53px;
@@ -193,100 +211,90 @@ export class Buttons extends React.Component {
 
   render() {
     return (
-      <Row>
-        <Fixed>
-          <Container>
-            <BtnContainer>
-              <Btn onClick={this.toggleDates} pushed={this.state.datesOpen}>
-                {this.state.datesOpen && <span>Check in — Check out</span>}
-                {!this.state.datesOpen && <span>Dates</span>}
-              </Btn>
-              <DatesBlock show={this.state.datesOpen}>
-                <DayPickerBlock>
-                  <DayPicker numberOfMonths={2} fixedWeeks />
-                </DayPickerBlock>
-                <RoomTypeButtonsBlock>
-                  <Cancel>Cancel</Cancel>
-                  <Apply>Apply</Apply>
-                </RoomTypeButtonsBlock>
-              </DatesBlock>
-            </BtnContainer>
-            <BtnContainer>
-              <Btn onClick={this.toggleGuests} pushed={this.state.guestsOpen}>
-                Guests
-              </Btn>
-              <GuestsBlock show={this.state.guestsOpen}>
-                <GuestsRow>
-                  <GuestDescr>
-                    <ParagraphRegular>Adults</ParagraphRegular>
-                  </GuestDescr>
-                  <MinusPlus>
-                    <Minus src={minus} />
-                    <Number>0</Number>
-                    <Plus src={plus} />
-                  </MinusPlus>
-                </GuestsRow>
-                <GuestsRow>
-                  <GuestDescr>
-                    <DescrP>Children</DescrP>
-                    <ParagraphLight>Ages 2 - 12</ParagraphLight>
-                  </GuestDescr>
-                  <MinusPlus>
-                    <Minus src={minus} />
-                    <Number>0</Number>
-                    <Plus src={plus} />
-                  </MinusPlus>
-                </GuestsRow>
-                <GuestsRow>
-                  <GuestDescr>
-                    <DescrP>Infants</DescrP>
-                    <ParagraphLight>Under 2</ParagraphLight>
-                  </GuestDescr>
-                  <MinusPlus>
-                    <Minus src={minus} />
-                    <Number>0</Number>
-                    <Plus src={plus} />
-                  </MinusPlus>
-                </GuestsRow>
-                <RoomTypeButtonsBlock>
-                  <Cancel>Cancel</Cancel>
-                  <Apply>Apply</Apply>
-                </RoomTypeButtonsBlock>
-              </GuestsBlock>
-            </BtnContainer>
-            <BtnContainer>
-              <Btn
-                onClick={this.toggleRoomType}
-                pushed={this.state.roomTypeOpen}
-              >
-                Room type
-              </Btn>
-              <RoomType show={this.state.roomTypeOpen} />
-            </BtnContainer>
-            <BtnContainer>
-              <Btn onClick={this.togglePrice} pushed={this.state.priceOpen}>
-                Price
-              </Btn>
-              <Price show={this.state.priceOpen} />
-            </BtnContainer>
-            <BtnContainer>
-              <Btn onClick={this.toggleInstant} pushed={this.state.instantOpen}>
-                Instant book
-              </Btn>
-              <InstantBook show={this.state.instantOpen} />
-            </BtnContainer>
-            <BtnContainer>
-              <Btn
-                onClick={this.toggleMoreFilters}
-                pushed={this.state.moreOpen}
-              >
-                More filters
-              </Btn>
-              <MoreFilters show={this.state.moreOpen} />
-            </BtnContainer>
-          </Container>
-        </Fixed>
-      </Row>
+        <Container>
+          <BtnContainer>
+            <Btn onClick={this.toggleDates} pushed={this.state.datesOpen}>
+              {this.state.datesOpen && <span>Check in — Check out</span>}
+              {!this.state.datesOpen && <span>Dates</span>}
+            </Btn>
+            <DatesBlock show={this.state.datesOpen}>
+              <DayPickerBlock>
+                <DayPicker numberOfMonths={2} fixedWeeks />
+              </DayPickerBlock>
+              <RoomTypeButtonsBlock>
+                <Cancel>Cancel</Cancel>
+                <Apply>Apply</Apply>
+              </RoomTypeButtonsBlock>
+            </DatesBlock>
+          </BtnContainer>
+          <BtnContainer>
+            <Btn onClick={this.toggleGuests} pushed={this.state.guestsOpen}>
+              Guests
+            </Btn>
+            <GuestsBlock show={this.state.guestsOpen}>
+              <GuestsRow>
+                <GuestDescr>
+                  <ParagraphRegular>Adults</ParagraphRegular>
+                </GuestDescr>
+                <MinusPlus>
+                  <Minus src={minus} />
+                  <Number>0</Number>
+                  <Plus src={plus} />
+                </MinusPlus>
+              </GuestsRow>
+              <GuestsRow>
+                <GuestDescr>
+                  <DescrP>Children</DescrP>
+                  <ParagraphLight>Ages 2 - 12</ParagraphLight>
+                </GuestDescr>
+                <MinusPlus>
+                  <Minus src={minus} />
+                  <Number>0</Number>
+                  <Plus src={plus} />
+                </MinusPlus>
+              </GuestsRow>
+              <GuestsRow>
+                <GuestDescr>
+                  <DescrP>Infants</DescrP>
+                  <ParagraphLight>Under 2</ParagraphLight>
+                </GuestDescr>
+                <MinusPlus>
+                  <Minus src={minus} />
+                  <Number>0</Number>
+                  <Plus src={plus} />
+                </MinusPlus>
+              </GuestsRow>
+              <RoomTypeButtonsBlock>
+                <Cancel>Cancel</Cancel>
+                <Apply>Apply</Apply>
+              </RoomTypeButtonsBlock>
+            </GuestsBlock>
+          </BtnContainer>
+          <BtnContainer>
+            <Btn onClick={this.toggleRoomType} pushed={this.state.roomTypeOpen}>
+              Room type
+            </Btn>
+            <RoomType show={this.state.roomTypeOpen} />
+          </BtnContainer>
+          <BtnContainer>
+            <Btn onClick={this.togglePrice} pushed={this.state.priceOpen}>
+              Price
+            </Btn>
+            <Price show={this.state.priceOpen} />
+          </BtnContainer>
+          <BtnContainer>
+            <Btn onClick={this.toggleInstant} pushed={this.state.instantOpen}>
+              Instant book
+            </Btn>
+            <InstantBook show={this.state.instantOpen} />
+          </BtnContainer>
+          <BtnContainer>
+            <Btn onClick={this.toggleMoreFilters} pushed={this.state.moreOpen}>
+              More filters
+            </Btn>
+            <MoreFilters show={this.state.moreOpen} />
+          </BtnContainer>
+        </Container>
     );
   }
 }
@@ -548,10 +556,20 @@ function MoreFilters(props) {
           </MoreFilterAmenities>
         </MoreFilterRow>
       </MoreFiltersSection>
+      <MoreFiltersControls>
+        <MoreFilterButtonSbmt>
+          <WordButtonSubmit>See homes</WordButtonSubmit>
+        </MoreFilterButtonSbmt>
+        <MoreFilterButtonCn>
+          <WordButtonCancel>Cancel</WordButtonCancel>
+        </MoreFilterButtonCn>
+      </MoreFiltersControls>
     </MoreFiltersBlock>
   );
 }
 
+const WordButtonSubmit = styled(WordBold)`color: #ffffff;`;
+const WordButtonCancel = styled(WordRegular)``;
 const SeeAllAmen = styled(ParagraphBold)`color: ${color.fill.primary};`;
 
 const MoreFilterToggle = styled(MoreFilterLabel)`margin-top: 50px;`;
