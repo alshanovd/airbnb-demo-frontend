@@ -1,7 +1,7 @@
 import React from 'react';
 import { Col } from 'react-flexbox-grid';
 import styled from 'styled-components';
-import { MdHide } from './../UI';
+import { MdHide } from './../UI/UI';
 
 const Point = styled.a`
   font-family: CircularAir, 'Helvetica Neue', Helvetica, sans-serif;
@@ -15,12 +15,10 @@ const Point = styled.a`
 `;
 
 export default () => (
-  <Col lgOffset={2} lg={4}>
-    <MdHide>
-      <Point href="#">Become a host</Point>
-      <Point href="#">Help</Point>
-      <Point href="#">Sing Up</Point>
-      <Point href="#">Log In</Point>
-    </MdHide>
-  </Col>
+  <MdHide>
+    <Point href="#">Become a host</Point>
+    <Point href="#">Help</Point>
+    <Point href="#">Sing Up</Point>
+    <Point href="#">Log In</Point>
+  </MdHide>
 );

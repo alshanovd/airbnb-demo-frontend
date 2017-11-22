@@ -158,6 +158,31 @@ export const NoWrap = styled.div`
 export const MdHide = styled.div`
   display: none;
   @media (min-width: 768px) {
-    display: block;
+    display: flex;
+    height: 100%;
+    align-items: center;
   }
 `;
+
+export const Button = styled.button`
+  padding: 7px 16px;
+  margin: 12px 12px 12px 0;
+  border: 1px solid rgba(72, 72, 72, 0.2);
+  box-sizing: border-box;
+  border-radius: 4px;
+  font-family: CircularAir, 'Helvetica Neue', Helvetica, sans-serif;
+  font-size: 14px;
+  background: #ffffff;
+  cursor: pointer;
+`;
+
+export const color = {
+  fill: {
+    primary: '#008489',
+  },
+
+  font: {
+    primary: '#383838',
+    secondary: '#636363',
+  },
+};

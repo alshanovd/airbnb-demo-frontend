@@ -11,7 +11,7 @@ import {
   Img,
   NoWrap,
   MdHide,
-} from './../UI';
+} from './../../UI/UI';
 import paris from './paris.png';
 import losangeles from './losangeles.png';
 import seoul from './seoul.png';

@@ -2,13 +2,10 @@ import React, { Component } from 'react';
 import 'normalize.css';
 import styled from 'styled-components';
 import { Grid } from 'react-flexbox-grid';
-import Header from './Header';
-import Explore from './Explore';
-import Experiences from './Experiences';
-import Homes from './Homes';
-import Popular from './Popular';
-import Featured from './Featured';
-import Footer from './Footer';
+import { Header } from './Header/Header';
+import { Landing } from './Landing/Landing';
+import { BrowserRouter, Route } from 'react-router-dom';
+import { Home } from './Home/Home';
 
 const Wrapper = styled.div`
   @media (min-width: 976px) {
@@ -23,15 +20,13 @@ class App extends Component {
   render() {
     return (
       <Wrapper>
-        <Grid>
-          <Header />
-          <Explore />
-          <Experiences />
-          <Homes />
-          <Popular />
-          <Featured />
-          <Footer />
-        </Grid>
+        <BrowserRouter>
+          <Grid>
+            <Route path="/" component={Header} />
+            <Route exact path="/" component={Landing} />
+            <Route path="/home" component={Home} />
+          </Grid>
+        </BrowserRouter>
       </Wrapper>
     );
   }

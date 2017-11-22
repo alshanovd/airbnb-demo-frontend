@@ -1,10 +1,11 @@
 import React from 'react';
-import { H2, Section, WordBold, NoWrap } from './../UI';
+import { H2, Section, WordBold, NoWrap } from './../../UI/UI';
 import styled from 'styled-components';
 import { Row, Col } from 'react-flexbox-grid';
 import home from './home.png';
 import experiences from './experiences.png';
 import restaurants from './restaurants.png';
+import { Link } from 'react-router-dom';
 
 const Block = styled.div`
   border: 1px solid rgba(72, 72, 72, 0.2);
@@ -38,28 +39,36 @@ const Title = styled(WordBold)`
   }
 `;
 
+const LinkTo = styled(Link)`text-decoration: none;`;
+
 export default () => (
   <Section>
     <H2>Explore Airbnb</H2>
     <Row>
       <NoWrap>
         <Col xs={6} md={5} lg={4}>
-          <Block>
-            <Img src={home} />
-            <Title>Home</Title>
-          </Block>
+          <LinkTo to="/home">
+            <Block>
+              <Img src={home} />
+              <Title>Home</Title>
+            </Block>
+          </LinkTo>
         </Col>
         <Col xs={6} md={5} lg={4}>
-          <Block>
-            <Img src={experiences} />
-            <Title>Experiences</Title>
-          </Block>
+          <LinkTo to="/experiences">
+            <Block>
+              <Img src={experiences} />
+              <Title>Experiences</Title>
+            </Block>
+          </LinkTo>
         </Col>
         <Col xs={6} md={5} lg={4}>
-          <Block>
-            <Img src={restaurants} />
-            <Title>Restaurants</Title>
-          </Block>
+          <LinkTo to="/restaurants">
+            <Block>
+              <Img src={restaurants} />
+              <Title>Restaurants</Title>
+            </Block>
+          </LinkTo>
         </Col>
       </NoWrap>
     </Row>

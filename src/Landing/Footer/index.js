@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Col } from 'react-flexbox-grid';
 import styled from 'styled-components';
-import { WordRegular, AncorRegular } from './../UI';
+import { WordRegular, AncorRegular } from './../../UI/UI';
 import dropdown from './dropdown.svg';
 import footerlogo from './footer-logo.svg';
 import facebook from './facebook.svg';

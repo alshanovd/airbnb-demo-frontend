@@ -15,7 +15,7 @@ import {
   SectionHead,
   NoWrap,
   MdHide,
-} from './../UI';
+} from './../../UI/UI';
 import lasalentina from './lasalentina.png';
 import dreamy from './dreamy.png';
 import bedr3 from './bedr3.png';

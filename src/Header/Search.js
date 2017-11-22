@@ -30,10 +30,8 @@ const Box = styled.div`
 `;
 
 export default () => (
-  <Col lg={5} md={7} xs={10}>
-    <Box>
-      <Logo src={search} />
-      <Input placeholder="Try Miami!" />
-    </Box>
-  </Col>
+  <Box>
+    <Logo src={search} />
+    <Input placeholder="Try Miami!" />
+  </Box>
 );
