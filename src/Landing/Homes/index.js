@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Row, Col } from 'react-flexbox-grid';
 import styled from 'styled-components';
 import {
@@ -16,9 +16,6 @@ import {
   NoWrap,
   MdHide,
 } from './../../UI/UI';
-import lasalentina from './lasalentina.png';
-import dreamy from './dreamy.png';
-import bedr3 from './bedr3.png';
 
 const Desc = styled.div`
   margin: 8px 0 0;
@@ -27,65 +24,89 @@ const Desc = styled.div`
 
 const Beds = styled(ParagraphLight)`margin: 2px 0 0;`;
 
-export default () => (
-  <Section>
-    <SectionHead>
-      <H2>Homes</H2>
-      <SeeAll>See all</SeeAll>
-    </SectionHead>
-    <Row>
-      <NoWrap>
-        <MdHide>
-          <NextPage />
-        </MdHide>
-        <Col xs={9} md={5} lg={4}>
-          <Img src={lasalentina} />
-          <Desc>
-            <ParagraphBold>$82 La Salentina, see, nature & relax</ParagraphBold>
-            <Beds>Entrie house · 9 beds</Beds>
-            <Stars>
-              <Star />
-              <Star />
-              <Star />
-              <Star />
-              <Star />
-              <Reviews>97 · Superhost</Reviews>
-            </Stars>
-          </Desc>
-        </Col>
-        <Col xs={9} md={5} lg={4}>
-          <Img src={bedr3} />
-          <Desc>
-            <ParagraphBold>
-              $82 Your private 3 bedr. riad and exclusi...
-            </ParagraphBold>
-            <Beds>Entrie house · 5 beds</Beds>
-            <Stars>
-              <Star />
-              <Star />
-              <Star />
-              <Star />
-              <Star />
-              <Reviews>97 · Superhost</Reviews>
-            </Stars>
-          </Desc>
-        </Col>
-        <Col xs={9} md={5} lg={4}>
-          <Img src={dreamy} />
-          <Desc>
-            <ParagraphBold>$200 Dreamy Tropical Tree House</ParagraphBold>
-            <Beds>Entrie treehouse · 1 beds</Beds>
-            <Stars>
-              <Star />
-              <Star />
-              <Star />
-              <Star />
-              <Star />
-              <Reviews>97 · Superhost</Reviews>
-            </Stars>
-          </Desc>
-        </Col>
-      </NoWrap>
-    </Row>
-  </Section>
-);
+export class Homes extends Component {
+  render() {
+    return (
+      <Section>
+        <SectionHead>
+          <H2>Homes</H2>
+          <SeeAll>See all</SeeAll>
+        </SectionHead>
+        <Row>
+          <NoWrap>
+            <MdHide>
+              <NextPage />
+            </MdHide>
+            <Cards />
+          </NoWrap>
+        </Row>
+      </Section>
+    );
+  }
+}
+
+function Cards() {
+  return homes.map((data, i) => (
+    <Col key={i} md={4}>
+      <Card descr={data} />
+    </Col>
+  ));
+}
+
+const Wrapper = styled.div``;
+
+export class Card extends Component {
+  constructor(props) {
+    super();
+    this.descr = props.descr;
+  }
+
+  render() {
+    return (
+      <Wrapper>
+        <Img src={this.descr.img} />
+        <Desc>
+          <ParagraphBold>
+            ${this.descr.price} {this.descr.title}
+          </ParagraphBold>
+          <Beds>Entrie treehouse · {this.descr.beds}}</Beds>
+          <Stars>
+            <Star />
+            <Star />
+            <Star />
+            <Star />
+            <Star />
+            <Reviews>{this.descr.reviews} · Superhost</Reviews>
+          </Stars>
+        </Desc>
+      </Wrapper>
+    );
+  }
+}
+
+export const homes = [
+  {
+    reviews: 88,
+    href: '#',
+    title: 'Dreamy Tropical Tree House',
+    price: '200',
+    beds: '1 beds',
+    img: require('./dreamy.png'),
+  },
+  {
+    reviews: 97,
+    href: '#',
+    title: 'La Salentina, see, nature & relax',
+    price: '82',
+    beds: '9 beds',
+    img: require('./bedr3.png'),
+  },
+  {
+    reviews: 45,
+    href: '#',
+    title: 'Your private 3 bedr. riad and exclusi...',
+    price: '82',
+    beds: '5 beds',
+    img: require('./lasalentina.png'),
+  },
+];

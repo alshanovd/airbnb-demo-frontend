@@ -1,11 +1,19 @@
 import React, { Component } from 'react';
 import { Row, Col } from 'react-flexbox-grid';
 import styled from 'styled-components';
-import { Card } from './Card';
+import { Card } from './../Landing/Homes';
 import GoogleMapReact from 'google-map-react';
+import { homes } from './homeData';
+
+const WrapperMap = styled.div`
+  position: fixed;
+  top: 127px;
+  right: 40px;
+  width: 391px;
+  height: 1124px;
+`;
 
 const WrapperHome = styled.div`margin-top: 120px;`;
-
 export class Home extends Component {
   render() {
     return (
@@ -17,10 +25,12 @@ export class Home extends Component {
             </Row>
           </Col>
           <Col md={4}>
-            <GoogleMapReact
-              defaultCenter={coords.center}
-              defaultZoom={coords.zoom}
-            />
+            <WrapperMap>
+              <GoogleMapReact
+                defaultCenter={coords.center}
+                defaultZoom={coords.zoom}
+              />
+            </WrapperMap>
           </Col>
         </Row>
       </WrapperHome>
@@ -28,10 +38,12 @@ export class Home extends Component {
   }
 }
 
+const CardSpec = styled(Card)`padding-top: 40px;`;
+
 function Blocks() {
   return homes.map((data, i) => (
     <Col key={i} md={6}>
-      <Card descr={data} />
+      <CardSpec descr={data} />
     </Col>
   ));
 }
@@ -40,54 +52,3 @@ const coords = {
   center: { lat: 47.2, lng: 13.2 },
   zoom: 5,
 };
-
-const homes = [
-  {
-    reviews: 97,
-    href: '#',
-    title: 'La Salentina, see, nature & relax',
-    price: '82',
-    beds: '9 beds',
-    img: require('./../Landing/Homes/lasalentina.png'),
-  },
-  {
-    reviews: 97,
-    href: '#',
-    title: 'La Salentina, see, nature & relax',
-    price: '82',
-    beds: '9 beds',
-    img: require('./../Landing/Homes/lasalentina.png'),
-  },
-  {
-    reviews: 97,
-    href: '#',
-    title: 'La Salentina, see, nature & relax',
-    price: '82',
-    beds: '9 beds',
-    img: require('./../Landing/Homes/lasalentina.png'),
-  },
-  {
-    reviews: 97,
-    href: '#',
-    title: 'La Salentina, see, nature & relax',
-    price: '82',
-    beds: '9 beds',
-    img: require('./../Landing/Homes/lasalentina.png'),
-  },
-  {
-    reviews: 97,
-    href: '#',
-    title: 'La Salentina, see, nature & relax',
-    price: '82',
-    beds: '9 beds',
-    img: require('./../Landing/Homes/lasalentina.png'),
-  },
-  {
-    reviews: 97,
-    href: '#',
-    title: 'La Salentina, see, nature & relax',
-    price: '82',
-    beds: '9 beds',
-    img: require('./../Landing/Homes/lasalentina.png'),
-  },
-];
