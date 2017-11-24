@@ -22,8 +22,7 @@ export const H2 = styled.h2`
 `;
 
 export const Section = styled.section`
-  margin: 24px 0;
-  display: flex;
+  ${'' /* margin: 24px 0; */} display: flex;
   flex-direction: column;
   position: relative;
   width: 100%;

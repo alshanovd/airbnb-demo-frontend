@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Col } from 'react-flexbox-grid';
+import { Row, Col, Grid } from 'react-flexbox-grid';
 import styled from 'styled-components';
 import Navi from './Navi';
 import Search from './Search';
@@ -25,8 +25,7 @@ const Fixed = styled.div`
   width: 100%;
   z-index: 1;
   @media (min-width: 976px) {
-    max-width: 976px;
-    margin-right: auto;
+    ${'' /* max-width: 976px; */} margin-right: auto;
     margin-left: auto;
     display: flex;
   }
@@ -34,6 +33,16 @@ const Fixed = styled.div`
 
 export const ShadowBlock = styled.div`
   box-shadow: 0px 0.5px 0px rgba(72, 72, 72, 0.3);
+  width: 100%;
+`;
+
+export const ShadowBlockContainer = styled.div`
+  @media (min-width: 976px) {
+    max-width: 976px;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+  }
 `;
 
 export class Header extends Component {
@@ -42,7 +51,7 @@ export class Header extends Component {
       <Fixed>
         <HeaderBlock>
           <ShadowBlock>
-            <Row>
+            <ShadowBlockContainer>
               <Col xs={2} md={1}>
                 <VerticalMiddle>
                   <Link to="/">
@@ -51,15 +60,19 @@ export class Header extends Component {
                   <Menu alt="menu" src={menu} />
                 </VerticalMiddle>
               </Col>
-              <Col md={7} xs={10}>
+              <Col md={5} xs={10}>
                 <Search />
               </Col>
-              <Col md={2}>
+              <Col mdOffset={2} md={2}>
                 <Navi />
               </Col>
-            </Row>
+            </ShadowBlockContainer>
           </ShadowBlock>
-          <Route exact path="/home" component={FilterMenu} />
+          <ShadowBlock>
+            <ShadowBlockContainer>
+              <Route exact path="/home" component={FilterMenu} />
+            </ShadowBlockContainer>
+          </ShadowBlock>
         </HeaderBlock>
       </Fixed>
     );

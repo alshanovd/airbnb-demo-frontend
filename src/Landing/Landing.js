@@ -7,7 +7,7 @@ import Featured from './Featured';
 import Footer from './Footer';
 import styled from 'styled-components';
 
-const LandingWrap = styled.div`margin-top: 160px;`;
+const LandingWrap = styled.div``;
 
 export class Landing extends Component {
   render() {

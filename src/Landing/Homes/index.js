@@ -53,7 +53,7 @@ function Cards() {
   ));
 }
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`padding-bottom: 40px;`;
 
 export class Card extends Component {
   constructor(props) {
@@ -69,7 +69,7 @@ export class Card extends Component {
           <ParagraphBold>
             ${this.descr.price} {this.descr.title}
           </ParagraphBold>
-          <Beds>Entrie treehouse · {this.descr.beds}}</Beds>
+          <Beds>Entrie treehouse · {this.descr.beds}</Beds>
           <Stars>
             <Star />
             <Star />

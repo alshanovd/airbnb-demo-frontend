@@ -4,16 +4,17 @@ import styled from 'styled-components';
 import { Card } from './../Landing/Homes';
 import GoogleMapReact from 'google-map-react';
 import { homes } from './homeData';
+import { Paginator } from './Paginator';
 
 const WrapperMap = styled.div`
   position: fixed;
   top: 127px;
-  right: 40px;
-  width: 391px;
-  height: 1124px;
+  right: 0;
+  width: 36.5%;
+  height: 100%;
 `;
 
-const WrapperHome = styled.div`margin-top: 120px;`;
+const WrapperHome = styled.div`margin-top: 70px;`;
 export class Home extends Component {
   render() {
     return (
@@ -31,6 +32,11 @@ export class Home extends Component {
                 defaultZoom={coords.zoom}
               />
             </WrapperMap>
+          </Col>
+        </Row>
+        <Row>
+          <Col md={8}>
+            <Paginator />
           </Col>
         </Row>
       </WrapperHome>

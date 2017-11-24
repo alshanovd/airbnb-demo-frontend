@@ -95,41 +95,37 @@ export class FilterMenu extends Component {
 
   render() {
     return (
-      <ShadowBlock>
-        <Row>
-          <Col md={12}>
-            <ButtonsContainer>
-              <BtnContainerShow>
-                <Btn onclick={this.toggleFilterBtn}>Dates</Btn>
-                <DatesBlock>
-                  <DayPickerBlock>
-                    <DayPicker numberOfMonths={2} fixedWeeks />
-                  </DayPickerBlock>
-                  <RoomTypeButtonsBlock>
-                    <Cancel>Cancel</Cancel>
-                    <Apply>Apply</Apply>
-                  </RoomTypeButtonsBlock>
-                </DatesBlock>
-              </BtnContainerShow>
-              <BtnContainerShow>
-                <Btn>Guests</Btn>
-              </BtnContainerShow>
-              <BtnContainerTablet>
-                <Btn>Room type</Btn>
-              </BtnContainerTablet>
-              <BtnContainerTablet>
-                <Btn>Price</Btn>
-              </BtnContainerTablet>
-              <BtnContainerTablet>
-                <Btn>Instant book</Btn>
-              </BtnContainerTablet>
-              <BtnContainerShow>
-                <Btn>More filters</Btn>
-              </BtnContainerShow>
-            </ButtonsContainer>
-          </Col>
-        </Row>
-      </ShadowBlock>
+      <Col md={12}>
+        <ButtonsContainer>
+          <BtnContainerShow>
+            <Btn onclick={this.toggleFilterBtn}>Dates</Btn>
+            <DatesBlock>
+              <DayPickerBlock>
+                <DayPicker numberOfMonths={2} fixedWeeks />
+              </DayPickerBlock>
+              <RoomTypeButtonsBlock>
+                <Cancel>Cancel</Cancel>
+                <Apply>Apply</Apply>
+              </RoomTypeButtonsBlock>
+            </DatesBlock>
+          </BtnContainerShow>
+          <BtnContainerShow>
+            <Btn>Guests</Btn>
+          </BtnContainerShow>
+          <BtnContainerTablet>
+            <Btn>Room type</Btn>
+          </BtnContainerTablet>
+          <BtnContainerTablet>
+            <Btn>Price</Btn>
+          </BtnContainerTablet>
+          <BtnContainerTablet>
+            <Btn>Instant book</Btn>
+          </BtnContainerTablet>
+          <BtnContainerShow>
+            <Btn>More filters</Btn>
+          </BtnContainerShow>
+        </ButtonsContainer>
+      </Col>
     );
   }
 }
