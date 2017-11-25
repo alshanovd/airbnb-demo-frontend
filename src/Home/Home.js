@@ -36,7 +36,7 @@ export class Home extends Component {
         </Row>
         <Row>
           <Col md={8}>
-            <Paginator />
+            <Paginator curPage={1} />
           </Col>
         </Row>
       </WrapperHome>
@@ -44,12 +44,14 @@ export class Home extends Component {
   }
 }
 
-const CardSpec = styled(Card)`padding-top: 40px;`;
+const CardSpec = styled.div`padding-bottom: 40px;`;
 
 function Blocks() {
   return homes.map((data, i) => (
     <Col key={i} md={6}>
-      <CardSpec descr={data} />
+      <CardSpec>
+        <Card descr={data} />
+      </CardSpec>
     </Col>
   ));
 }

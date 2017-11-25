@@ -1,22 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import {
-  WordRegular,
-  H2,
-  Section,
-  SeeAll,
-  RightSwype,
-  SectionHead,
-  NoWrap,
-  Img,
-  ParagraphLight,
-  ParagraphRegular,
-  ParagraphBold,
-  Stars,
-  Star,
-  Reviews,
-  MdHide,
-} from './../UI/UI';
+import { WordRegular, ParagraphRegular } from './../UI/UI';
 import { color } from './../UI/UI';
 import nextpage from './nextpage.svg';
 
@@ -29,7 +13,7 @@ const PageNum = styled(WordRegular)`
   width: 25px;
   text-align: center;
   margin: 0 5px;
-  color: ${color.font.primary};
+  color: ${color.fill.primary};
   line-height: 25px;
   ${props =>
     props.cur &&
@@ -50,8 +34,6 @@ const PaginatorBlock = styled.div`
   width: 100%;
 `;
 
-const pages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17];
-
 const Dots = styled(PageNum)`
   border-radius: none;
   background: none;
@@ -69,7 +51,7 @@ const NextPage = styled(PageNum)`
   background-position: center center;
   background-repeat: no-repeat;
   :hover {
-    ${'' /* TODO: fix it */} background: none;
+    background: none;
     background-image: url(${nextpage});
     background-position: center center;
     background-repeat: no-repeat;
@@ -96,6 +78,8 @@ const Footer = styled(ParagraphRegular)`
   text-align: center;
   display: block;
   margin: 40px 0 10px 0;
+
+  font-size: 16px;
   color: ${color.font.secondary};
 `;
 
@@ -106,7 +90,6 @@ export class Paginator extends Component {
     return (
       <Wrapper>
         <PaginatorBlock>
-          {/* TODO: make a Component */}
           <PageNum cur={this.curPage === 1}>1</PageNum>
           <PageNum cur={this.curPage === 2}>2</PageNum>
           <PageNum cur={this.curPage === 3}>3</PageNum>

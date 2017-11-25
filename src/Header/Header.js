@@ -47,6 +47,8 @@ export const ShadowBlockContainer = styled.div`
   }
 `;
 
+const ButtonsShadowBlock = styled(ShadowBlock)`height: 56px;`;
+
 export class Header extends Component {
   render() {
     return (
@@ -70,15 +72,19 @@ export class Header extends Component {
               </Col>
             </ShadowBlockContainer>
           </ShadowBlock>
-          <Route exact path="/home" component={FilterMenu}>
-            <ShadowBlock>
-              <ShadowBlockContainer>
-                <FilterMenu />
-              </ShadowBlockContainer>
-            </ShadowBlock>
-          </Route>
+          <Route exact path="/home" component={Filters} />
         </HeaderBlock>
       </Fixed>
     );
   }
+}
+
+function Filters() {
+  return (
+    <ButtonsShadowBlock>
+      <ShadowBlockContainer>
+        <FilterMenu />
+      </ShadowBlockContainer>
+    </ButtonsShadowBlock>
+  );
 }
