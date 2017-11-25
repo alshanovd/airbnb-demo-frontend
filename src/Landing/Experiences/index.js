@@ -14,13 +14,13 @@ import {
   Reviews,
   SectionHead,
   NoWrap,
-} from './../UI';
+} from './../../UI/UI';
 import forest from './forest.png';
 import salsa from './salsa.png';
 import mountian from './mountian.png';
 import whale from './whale.png';
 
-const Desc = styled.p`
+const Desc = styled.div`
   font-family: CircularAirBold, 'Helvetica Neue', Helvetica, sans-serif;
   margin: 8px 0 0;
   padding: 0;

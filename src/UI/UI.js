@@ -11,7 +11,7 @@ export const H2 = styled.h2`
   font-family: CircularAirBold, 'Helvetica Neue', Helvetica, sans-serif;
   color: #383838;
   font-size: 24px;
-  margin: 16px 0;
+  margin: 24px 0;
   line-height: 28px;
   justify-content: space-between;
   @media (min-width: 321px) {
@@ -22,12 +22,16 @@ export const H2 = styled.h2`
 `;
 
 export const Section = styled.section`
-  margin: 24px 0;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-  overflow: hidden;
+  padding-right: 0;
+  @media (min-width: 321px) {
+    padding-right: 20px;
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
 `;
 
 export const SeeAll = styled.a`
@@ -49,6 +53,7 @@ export const SeeAll = styled.a`
 `;
 
 export const NextPage = styled.button`
+  margin-right: 20px;
   background: #ffffff;
   background-image: url(${arrow});
   background-position: center center;
@@ -120,11 +125,12 @@ const Ancor = styled.a`
 
 export const AncorRegular = styled(Ancor)`
   font-family: CircularAir, 'Helvetica Neue', Helvetica, sans-serif;
+  color: #636363;
 `;
 
 const StarImg = styled.img`
   margin-right: 3px;
-  height: 12px;
+  height: 14px;
 `;
 
 export function Star() {
@@ -140,7 +146,10 @@ export const Stars = styled.div`
 
 export const Img = styled.img`width: 100%;`;
 
-export const Reviews = styled(WordRegular)`font-size: 12px;`;
+export const Reviews = styled(WordRegular)`
+  font-size: 12px;
+  padding-left: 4px;
+`;
 
 export const SectionHead = styled.div`
   display: flex;
@@ -158,6 +167,31 @@ export const NoWrap = styled.div`
 export const MdHide = styled.div`
   display: none;
   @media (min-width: 768px) {
-    display: block;
+    display: flex;
+    height: 100%;
+    align-items: center;
   }
 `;
+
+export const Button = styled.button`
+  padding: 7px 16px;
+  margin: 12px 12px 12px 0;
+  border: 1px solid rgba(72, 72, 72, 0.2);
+  box-sizing: border-box;
+  border-radius: 4px;
+  font-family: CircularAir, 'Helvetica Neue', Helvetica, sans-serif;
+  font-size: 14px;
+  background: #ffffff;
+  cursor: pointer;
+`;
+
+export const color = {
+  fill: {
+    primary: '#008489',
+  },
+
+  font: {
+    primary: '#383838',
+    secondary: '#636363',
+  },
+};
