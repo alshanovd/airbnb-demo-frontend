@@ -47,7 +47,7 @@ export class Homes extends Component {
 
 function Cards() {
   return homes.map((data, i) => (
-    <Col key={i} md={4}>
+    <Col key={i} md={4} xs={7}>
       <Card descr={data} />
     </Col>
   ));

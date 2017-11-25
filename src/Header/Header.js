@@ -9,7 +9,10 @@ import 'react-day-picker/lib/style.css';
 import { Link, Route } from 'react-router-dom';
 import { FilterMenu } from './Filter/FilterMenu';
 
-const HeaderBlock = styled.header`width: 100%;`;
+const HeaderBlock = styled.header`
+  width: 100%;
+  display: flex;
+`;
 
 const VerticalMiddle = styled.div`
   display: flex;
@@ -49,30 +52,50 @@ export const ShadowBlockContainer = styled.div`
 
 const ButtonsShadowBlock = styled(ShadowBlock)`height: 56px;`;
 
+const MdHide = styled.div`
+  display: none;
+  @media (min-width: 769px) {
+    display: flex;
+    height: 100%;
+    align-items: center;
+  }
+`;
+
+const RowContainer = styled.div`
+  display: flex;
+  width: 100%;
+`;
+
 export class Header extends Component {
   render() {
     return (
       <Fixed>
         <HeaderBlock>
-          <ShadowBlock>
-            <ShadowBlockContainer>
-              <Col xs={2} md={1}>
-                <VerticalMiddle>
-                  <Link to="/">
-                    <img alt="logo" src={shape} />
-                  </Link>
-                  <Menu alt="menu" src={menu} />
-                </VerticalMiddle>
-              </Col>
-              <Col md={5} xs={10}>
-                <Search />
-              </Col>
-              <Col mdOffset={2} md={2}>
-                <Navi />
-              </Col>
-            </ShadowBlockContainer>
-          </ShadowBlock>
-          <Route exact path="/home" component={Filters} />
+          <Grid>
+            <ShadowBlock>
+              <ShadowBlockContainer>
+                <RowContainer>
+                  <Col xs={2} sm={1}>
+                    <VerticalMiddle>
+                      <Link to="/">
+                        <img alt="logo" src={shape} />
+                      </Link>
+                      <Menu alt="menu" src={menu} />
+                    </VerticalMiddle>
+                  </Col>
+                  <Col md={5} sm={7}>
+                    <Search />
+                  </Col>
+                  <MdHide>
+                    <Col mdOffset={2} md={2}>
+                      <Navi />
+                    </Col>
+                  </MdHide>
+                </RowContainer>
+              </ShadowBlockContainer>
+            </ShadowBlock>
+            <Route exact path="/home" component={Filters} />
+          </Grid>
         </HeaderBlock>
       </Fixed>
     );

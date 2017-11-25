@@ -21,7 +21,8 @@ import seaprice from './seaprice.png';
 const Title = styled(ParagraphBold)`
   font-size: 14px;
   font-size: 16px;
-  @media (min-width: 320px) {
+  padding-top: 2px;
+  @media (min-width: 321px) {
     font-size: 18px;
     margin: 5px 0 0;
   }
@@ -30,7 +31,8 @@ const Title = styled(ParagraphBold)`
 const SubTitle = styled(ParagraphLight)`
   font-size: 12px;
   line-height: 14px;
-  @media (min-width: 320px) {
+  padding-top: 4px;
+  @media (min-width: 321px) {
     font-size: 18px;
     margin: 7px 0 0;
   }
@@ -39,8 +41,9 @@ const SubTitle = styled(ParagraphLight)`
 const Descr = styled(ParagraphBold)`
   font-size: 8px;
   line-height: 9px;
+  padding-top: 2px;
   text-transform: uppercase;
-  @media (min-width: 320px) {
+  @media (min-width: 321px) {
     font-size: 10px;
     margin: 12px 0 0;
   }

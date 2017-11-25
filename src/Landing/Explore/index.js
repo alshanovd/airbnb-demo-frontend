@@ -8,7 +8,14 @@ import restaurants from './restaurants.png';
 import { Link } from 'react-router-dom';
 
 const Block = styled.div`
-  border: 1px solid rgba(72, 72, 72, 0.2);
+  @media (min-width: 421px) {
+    flex-direction: row;
+  }
+  @media (min-width: 321px) {
+    margin-right: 0;
+  }
+  background: #ffffff;
+  border: 0.4px solid rgba(72, 72, 72, 0.2);
   box-sizing: border-box;
   box-shadow: 0px 2px 4px rgba(72, 72, 72, 0.08);
   border-radius: 4px;
@@ -17,28 +24,45 @@ const Block = styled.div`
   width: 100%;
   align-items: center;
   flex-direction: column;
-  @media (min-width: 421px) {
-    flex-direction: row;
-  }
 `;
 
 const Img = styled.img`
   width: 100%;
   @media (min-width: 421px) {
     width: 96px;
+    display: block;
   }
 `;
 
 const Title = styled(WordBold)`
+  padding: 15px 0 15px 12px;
   width: 100%;
   font-size: 12px;
   @media (min-width: 421px) {
     margin-left: 24px;
     font-size: 17px;
   }
+  @media (min-width: 321px) {
+    width: 100%;
+    font-size: 17px;
+    display: block;
+    height: 40px;
+    line-height: 40px;
+  }
 `;
 
 const LinkTo = styled(Link)`text-decoration: none;`;
+
+const ImgWrapper = styled.div`
+  height: 78px;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  @media (min-width: 321px) {
+    height: auto;
+    overflow: inherit;
+  }
+`;
 
 export default () => (
   <Section>
@@ -48,7 +72,9 @@ export default () => (
         <Col xs={6} md={5} lg={4}>
           <LinkTo to="/home">
             <Block>
-              <Img src={home} />
+              <ImgWrapper>
+                <Img src={home} />
+              </ImgWrapper>
               <Title>Homes</Title>
             </Block>
           </LinkTo>
@@ -56,7 +82,9 @@ export default () => (
         <Col xs={6} md={5} lg={4}>
           <LinkTo to="/experiences">
             <Block>
-              <Img src={experiences} />
+              <ImgWrapper>
+                <Img src={experiences} />
+              </ImgWrapper>
               <Title>Experiences</Title>
             </Block>
           </LinkTo>
@@ -64,7 +92,9 @@ export default () => (
         <Col xs={6} md={5} lg={4}>
           <LinkTo to="/restaurants">
             <Block>
-              <Img src={restaurants} />
+              <ImgWrapper>
+                <Img src={restaurants} />
+              </ImgWrapper>
               <Title>Restaurants</Title>
             </Block>
           </LinkTo>

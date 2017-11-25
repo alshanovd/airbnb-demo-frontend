@@ -22,13 +22,16 @@ export const H2 = styled.h2`
 `;
 
 export const Section = styled.section`
-  padding-right: 20px;
-  margin-top: 24px;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-  overflow: hidden;
+  padding-right: 0;
+  @media (min-width: 321px) {
+    padding-right: 20px;
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
 `;
 
 export const SeeAll = styled.a`

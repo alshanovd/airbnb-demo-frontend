@@ -80,6 +80,7 @@ const Footer = styled(ParagraphRegular)`
   margin: 40px 0 10px 0;
 
   font-size: 16px;
+
   color: ${color.font.secondary};
 `;
 
