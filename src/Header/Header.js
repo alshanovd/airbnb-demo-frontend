@@ -34,9 +34,11 @@ const Fixed = styled.div`
 export const ShadowBlock = styled.div`
   box-shadow: 0px 0.5px 0px rgba(72, 72, 72, 0.3);
   width: 100%;
+  height: 80px;
 `;
 
 export const ShadowBlockContainer = styled.div`
+  height: 100%;
   @media (min-width: 976px) {
     max-width: 976px;
     margin-right: auto;
@@ -68,11 +70,13 @@ export class Header extends Component {
               </Col>
             </ShadowBlockContainer>
           </ShadowBlock>
-          <ShadowBlock>
-            <ShadowBlockContainer>
-              <Route exact path="/home" component={FilterMenu} />
-            </ShadowBlockContainer>
-          </ShadowBlock>
+          <Route exact path="/home" component={FilterMenu}>
+            <ShadowBlock>
+              <ShadowBlockContainer>
+                <FilterMenu />
+              </ShadowBlockContainer>
+            </ShadowBlock>
+          </Route>
         </HeaderBlock>
       </Fixed>
     );

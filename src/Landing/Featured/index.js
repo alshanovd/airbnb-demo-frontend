@@ -11,6 +11,7 @@ import {
   Img,
   NoWrap,
   MdHide,
+  ParagraphBold,
 } from './../../UI/UI';
 import paris from './paris.png';
 import losangeles from './losangeles.png';
@@ -20,12 +21,13 @@ import tokyo from './tokyo.png';
 import miami from './miami.png';
 
 const NextPageFeatured = styled(NextPage)`top: 59%;`;
-const Title = styled(ParagraphRegular)`
+const Title = styled(ParagraphBold)`
   margin: 4px 0 0;
   font-size: 12px;
   line-height: 14px;
   @media (min-width: 321px) {
     margin: 8px 0 0;
+    font-size: 15px;
   }
 `;
 
@@ -39,7 +41,7 @@ const SeeAllXsHide = styled(SeeAll)`
 export default () => (
   <Section>
     <SectionHead>
-      <H2>Featured destination</H2>
+      <H2>Featured destinations</H2>
       <SeeAllXsHide>See all</SeeAllXsHide>
     </SectionHead>
     <Row>

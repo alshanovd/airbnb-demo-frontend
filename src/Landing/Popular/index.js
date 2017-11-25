@@ -18,31 +18,31 @@ import hanjan from './hanjan.png';
 import primemeats from './primemeats.png';
 import seaprice from './seaprice.png';
 
-const Descr = styled(ParagraphBold)`
-  font-size: 10px;
-  margin: 12px 0 0;
-  text-transform: uppercase;
-  @media (min-width: 320px) {
-    font-size: 8px;
-    line-height: 9px;
-  }
-`;
-
 const Title = styled(ParagraphBold)`
-  font-size: 18px;
-  margin: 2px 0 0;
+  font-size: 14px;
+  font-size: 16px;
   @media (min-width: 320px) {
-    font-size: 14px;
-    font-size: 16px;
+    font-size: 18px;
+    margin: 5px 0 0;
   }
 `;
 
 const SubTitle = styled(ParagraphLight)`
-  font-size: 18px;
-  margin: 4px 0 0;
+  font-size: 12px;
+  line-height: 14px;
   @media (min-width: 320px) {
-    font-size: 12px;
-    line-height: 14px;
+    font-size: 18px;
+    margin: 7px 0 0;
+  }
+`;
+
+const Descr = styled(ParagraphBold)`
+  font-size: 8px;
+  line-height: 9px;
+  text-transform: uppercase;
+  @media (min-width: 320px) {
+    font-size: 10px;
+    margin: 12px 0 0;
   }
 `;
 

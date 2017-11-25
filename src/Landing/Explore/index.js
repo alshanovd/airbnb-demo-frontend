@@ -31,7 +31,6 @@ const Img = styled.img`
 
 const Title = styled(WordBold)`
   width: 100%;
-  padding: 12px;
   font-size: 12px;
   @media (min-width: 421px) {
     margin-left: 24px;
@@ -50,7 +49,7 @@ export default () => (
           <LinkTo to="/home">
             <Block>
               <Img src={home} />
-              <Title>Home</Title>
+              <Title>Homes</Title>
             </Block>
           </LinkTo>
         </Col>

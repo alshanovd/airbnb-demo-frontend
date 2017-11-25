@@ -6,6 +6,7 @@ import { Header } from './Header/Header';
 import { Landing } from './Landing/Landing';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { Home } from './Home/Home';
+import Footer from './Landing/Footer';
 
 const ContentWrapper = styled.div`
   padding-top: 80px;
@@ -21,13 +22,15 @@ const HeaderWrapper = styled.div``;
 
 const Wrapper = styled.div``;
 
+const FooterWrapper = styled.div``;
+
 class App extends Component {
   render() {
     return (
       <BrowserRouter>
         <Wrapper>
           <HeaderWrapper>
-              <Route path="/" component={Header} />
+            <Route path="/" component={Header} />
           </HeaderWrapper>
           <ContentWrapper>
             <Grid>
@@ -35,6 +38,9 @@ class App extends Component {
               <Route exact path="/" component={Landing} />
             </Grid>
           </ContentWrapper>
+          <FooterWrapper>
+            <Route exact path="/" component={Footer} />
+          </FooterWrapper>
         </Wrapper>
       </BrowserRouter>
     );

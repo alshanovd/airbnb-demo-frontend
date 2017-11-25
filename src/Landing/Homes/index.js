@@ -53,7 +53,7 @@ function Cards() {
   ));
 }
 
-const Wrapper = styled.div`padding-bottom: 40px;`;
+const Wrapper = styled.div``;
 
 export class Card extends Component {
   constructor(props) {

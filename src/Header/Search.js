@@ -3,7 +3,7 @@ import { Col } from 'react-flexbox-grid';
 import styled from 'styled-components';
 import search from './search.svg';
 
-const Logo = styled.img`margin-left: 5px;`;
+const Logo = styled.img`margin: 0 10px;`;
 
 const Input = styled.input`
   font-family: CircularAir, 'Helvetica Neue', Helvetica, sans-serif;
@@ -27,6 +27,7 @@ const Box = styled.div`
   padding: 5px;
   display: flex;
   align-item: center;
+  height: 48px;
 `;
 
 export default () => (

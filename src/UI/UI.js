@@ -11,7 +11,7 @@ export const H2 = styled.h2`
   font-family: CircularAirBold, 'Helvetica Neue', Helvetica, sans-serif;
   color: #383838;
   font-size: 24px;
-  margin: 16px 0;
+  margin: 24px 0;
   line-height: 28px;
   justify-content: space-between;
   @media (min-width: 321px) {
@@ -22,7 +22,9 @@ export const H2 = styled.h2`
 `;
 
 export const Section = styled.section`
-  ${'' /* margin: 24px 0; */} display: flex;
+  padding-right: 20px;
+  margin-top: 24px;
+  display: flex;
   flex-direction: column;
   position: relative;
   width: 100%;
@@ -48,6 +50,7 @@ export const SeeAll = styled.a`
 `;
 
 export const NextPage = styled.button`
+  margin-right: 20px;
   background: #ffffff;
   background-image: url(${arrow});
   background-position: center center;
@@ -119,11 +122,12 @@ const Ancor = styled.a`
 
 export const AncorRegular = styled(Ancor)`
   font-family: CircularAir, 'Helvetica Neue', Helvetica, sans-serif;
+  color: #636363;
 `;
 
 const StarImg = styled.img`
   margin-right: 3px;
-  height: 12px;
+  height: 14px;
 `;
 
 export function Star() {
@@ -139,7 +143,10 @@ export const Stars = styled.div`
 
 export const Img = styled.img`width: 100%;`;
 
-export const Reviews = styled(WordRegular)`font-size: 12px;`;
+export const Reviews = styled(WordRegular)`
+  font-size: 12px;
+  padding-left: 4px;
+`;
 
 export const SectionHead = styled.div`
   display: flex;
